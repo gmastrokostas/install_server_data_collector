@@ -1,0 +1,34 @@
+---
+#POSTGRES RELATED VARIABLES
+
+#Postgres RPM packages related
+postgres_repo: https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+postgres_server: postgresql14-server
+posgres_contrib: postgresql14-contrib
+
+#Ansible related packages
+epel: epel-release
+ansible: ansible
+libvirt: ansible-galaxy collection install community.libvirt
+
+#service names -- DO NOT change unless you know what you are doing
+postgres_vnum: postgresql-14
+postgres_serv: postgresql
+postgres_default: postgres
+postgres_pass: zxc123
+
+# vars related to config files
+postgres_conf:  /var/lib/pgsql/14/data/postgresql.conf
+postgres_pghba_conf: /var/lib/pgsql/14/data/pg_hba.conf
+
+#Vars related to seeker home directory
+#You can safely change the admin account name to your liking
+app_admin_account: seeker
+app_adm_acnt_pass: zxc123
+seeker_path: /home/{{app_admin_account}}/
+
+#Vars related to the database it 
+db_name: serverdata
+
+#Shell commands
+init_db: /usr/pgsql-14/bin/postgresql-14-setup initdb

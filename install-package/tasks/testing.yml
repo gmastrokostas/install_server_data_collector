@@ -1,0 +1,23 @@
+- hosts: all
+  
+  tasks:
+  - name: Install epel-release
+    package:
+      name: epel-release
+      state: latest
+  - name: Update all packages
+    package:
+      name: "*"
+      state: latest
+  - name: Rebooting post update
+    reboot:
+      post_reboot_delay: 60
+      reboot_timeout: 500
+      connect_timeout: 300
+      test_command: uptime
+  - name: Disable postgresql module repo
+    shell: dnf -qy module disable postgresql
+  - name: Install the postgres repo
+    package:
+      name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm 
+      state: latest

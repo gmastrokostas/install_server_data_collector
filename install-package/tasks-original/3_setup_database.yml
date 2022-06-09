@@ -1,0 +1,76 @@
+- name: Set postgres database user password
+  become: yes
+  become_method: sudo
+  become_user: "{{postgres_default}}"
+  postgresql_user:
+    db: "{{postgres_default}}"
+    name: "{{postgres_default}}"
+    password: "{{postgres_pass}}"
+    expires: infinity
+
+- name: Create role seeker and set password
+  become: yes
+  become_method: sudo
+  become_user:  "{{postgres_default}}"
+  postgresql_user:
+     name: "{{app_admin_account}}"
+     password: "{{app_adm_acnt_pass}}"
+     expires: infinity
+
+- name: Make role seeker a super user
+  become: yes
+  become_method: sudo
+  become_user: "{{postgres_default}}"
+  postgresql_query:
+    query: alter role seeker superuser
+    db: "{{postgres_default}}"
+
+- name: Create database serverdata
+  become: yes
+  become_method: sudo
+  become_user: "{{postgres_default}}"
+  postgresql_db:
+    name: serverdata
+
+- name: Change ownership of serverdata to role seeker
+  become: yes
+  become_method: sudo
+  become_user: "{{postgres_default}}"
+  postgresql_query:
+    query: ALTER DATABASE "{{db_name}}"  OWNER TO "{{app_admin_account}}";
+    db: "{{postgres_default}}"
+
+- name: Create serverdata schema
+  become: yes
+  become_method: sudo
+  become_user: seeker
+  postgresql_query:
+    query: create schema serverdata_schema;
+    login_user: seeker
+    db: serverdata
+
+- name: Set search path to server_data for user seeker
+  become: yes
+  become_method: sudo
+  become_user: seeker
+  postgresql_query:
+    query: alter database serverdata set search_path to serverdata_schema;;
+    db: serverdata
+    login_user: seeker
+
+
+- name: Transfer the database_schema to create tables-views-etc
+  copy:
+    src: database-schema.sql
+    dest: /home/seeker/
+    owner: seeker
+    group: seeker
+
+- name: Install the Database Schema
+  shell: psql -f /var/lib/pgsql/database-schema.sql
+  become: yes
+  become_user: seeker
+
+
+    
+    
