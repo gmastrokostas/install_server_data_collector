@@ -10,7 +10,6 @@
 - name: Deploy the pg_hba template file
   template:
     src: pg_hba.conf.j2
-    #dest: /var/lib/pgsql/14/data/pg_hba.conf
     dest: "{{postgres_pghba_conf}}"
 
 - name: Enable and Start database
@@ -25,76 +24,70 @@
         permanent: yes
         state: enabled
 
-- name: Set postgres database user password
-  become: yes
-  become_method: sudo
-  become_user: "{{postgres_default}}"
-  postgresql_user:
-    db: "{{postgres_default}}"
-    name: "{{postgres_default}}"
-    password: "{{postgres_pass}}"
-    expires: infinity
-
-- name: Create role seeker and set password
-  become: yes
-  become_method: sudo
-  become_user:  "{{postgres_default}}"
-  postgresql_user:
-     name: "{{app_admin_account}}"
-     password: "{{app_adm_acnt_pass}}"
-     expires: infinity
-
-- name: Make role seeker a super user
-  become: yes
-  become_method: sudo
-  become_user: "{{postgres_default}}"
-  postgresql_query:
-    query: alter role seeker superuser
-    db: "{{postgres_default}}"
-
-- name: Create database serverdata
-  become: yes
-  become_method: sudo
-  become_user: "{{postgres_default}}"
-  postgresql_db:
-    name: serverdata
-
-- name: Change ownership of serverdata to role seeker
-  become: yes
-  become_method: sudo
-  become_user: "{{postgres_default}}"
-  postgresql_query:
-    query: ALTER DATABASE "{{db_name}}"  OWNER TO "{{app_admin_account}}";
-    db: "{{postgres_default}}"
-
-- name: Create serverdata schema
-  become: yes
-  become_method: sudo
-  become_user: seeker
-  postgresql_query:
-    query: create schema serverdata_schema;
-    login_user: seeker
-    db: serverdata
-
-- name: Set search path to server_data for user seeker
-  become: yes
-  become_method: sudo
-  become_user: seeker
-  postgresql_query:
-    query: alter database serverdata set search_path to serverdata_schema;;
-    db: serverdata
-    login_user: seeker
-
-
 - name: Transfer the database_schema to create tables-views-etc
   copy:
-    src: database-schema.sql
-    dest: /home/seeker/
-    owner: seeker
-    group: seeker
+    src: "{{db_schema}}"
+    dest: "{{seeker_path}}"
+    owner: "{{app_admin_account}}"
+    group: "{{app_admin_account}}"
 
-- name: Install the Database Schema
+
+
+- name: Prepare database - Set password and create app accounts
   become: yes
   become_method: sudo
-  become_user: seeker
-  shell: psql -f /home/seeker/database-schema.sql -d serverdata
+  become_user: "{{postgres_default}}"
+  block:
+    - name: Set postgres database user password
+      postgresql_user:
+        db: "{{postgres_default}}"
+        name: "{{postgres_default}}"
+        password: "{{postgres_pass}}"
+        expires: infinity
+
+    - name: Create role seeker and set password
+      postgresql_user:
+        name: "{{app_admin_account}}"
+        password: "{{app_adm_acnt_pass}}"
+        expires: infinity
+
+    - name: Make role seeker a super user
+      postgresql_query:
+        query: alter role seeker superuser
+        db: "{{postgres_default}}"
+
+    - name: Create database serverdata
+      postgresql_db:
+        name: "{{db_name}}"
+
+    - name: Change ownership of serverdata to role seeker
+      postgresql_query:
+        query: ALTER DATABASE "{{db_name}}"  OWNER TO "{{app_admin_account}}";
+        db: "{{postgres_default}}"
+
+- name: Setup the application schema, roles, complete setup of application database
+  become: yes
+  become_method: sudo
+  become_user: "{{app_admin_account}}"
+  block:
+    - name: Create serverdata schema
+      postgresql_query:
+        query: create schema serverdata_schema;
+        login_user: "{{app_admin_account}}"
+        db: "{{db_name}}"
+
+    - name: Set search path to server_data for user seeker
+      postgresql_query:
+        query: alter database serverdata set search_path to serverdata_schema;;
+        db: "{{db_name}}"
+        login_user: "{{app_admin_account}}"
+
+    - name: Install the Database Schema
+      shell: psql -f {{seeker_path}}{{db_schema}}  -d "{{db_name}}"
+
+    - name: Create and setup read only user - ro_seeker
+      postgresql_query:
+        query: "{{item.perm}}"
+        db: "{{db_name}}"
+        login_user: "{{app_admin_account}}"
+      loop: "{{grants}}"

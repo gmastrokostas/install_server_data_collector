@@ -48,10 +48,14 @@
     name: "{{ansible}}"
     state: latest
 
-- name: create user seeker
+- name: create required System accounts for isolated database access
   user:
-    name: "{{app_admin_account}}"
+    #name: "{{app_admin_account}}"
+    name: "{{item}}"
     state: present
+  loop:
+   - "{{app_admin_account}}"
+   - "{{app_ro_account}}"
 
 - name: Set ACLs for db account
   acl:
