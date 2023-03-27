@@ -1,0 +1,15 @@
+---
+- name: Assert server is  running Centos/Rocky version 8
+  assert:
+    that:
+      - ansible_os_family == "RedHat"
+      - ansible_distribution == "Rocky" or ansible_distribution == "RedHat"
+      - ansible_distribution_major_version == '8'
+    fail_msg: You need to be running Rocky or Centos version 8.x
+
+- name: Assert server has more than one 1 GIG of RAM
+  assert:
+    that:
+      - ansible_memtotal_mb >= 2024
+    fail_msg: You need to have 2Gig of RAM to run postgres
+
