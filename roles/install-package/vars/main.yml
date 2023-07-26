@@ -8,7 +8,7 @@ posgres_contrib: postgresql14-contrib
 
 #Ansible related packages
 epel: epel-release
-ansible: ansible
+ansible-core: ansible-core
 libvirt: ansible-galaxy collection install community.libvirt
 
 #Base packages-utilities
@@ -29,7 +29,7 @@ base_packages:
 postgres_vnum: postgresql-14
 postgres_serv: postgresql
 postgres_default: postgres
-postgres_pass: zxc123
+#postgres_pass: zxc123
 
 # vars related to config files
 postgres_conf:  /var/lib/pgsql/14/data/postgresql.conf
@@ -39,12 +39,12 @@ postgres_pghba_conf: /var/lib/pgsql/14/data/pg_hba.conf
 #Vars related to seeker home directory
 #You can safely change the admin account name to your liking
 app_admin_account: seeker
-app_adm_acnt_pass: zxc123
+#app_adm_acnt_pass: zxc123
 seeker_path: /home/{{app_admin_account}}/
 
 #Vars related to read only DB account
 app_ro_account: ro_seeker
-app_ro_acnt_pass: zxc123
+#app_ro_acnt_pass: zxc123
 ro_seeker_path: /home/{{app_ro_account}}
 
 #Permissions for read only DB account
@@ -63,5 +63,5 @@ db_schema: schema_only.sql
 init_db: /usr/pgsql-14/bin/postgresql-14-setup initdb
 
 #Install files
-app_tar_file: server_data_collector.tar.gz
+app_tar_file: server_data_collector.tar
 app_dir: server_data_collector
