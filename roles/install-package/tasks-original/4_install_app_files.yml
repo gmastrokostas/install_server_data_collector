@@ -1,0 +1,15 @@
+---
+- name: Transer tar files to your remote server
+  copy:
+    src: "{{app_tar_file}}"
+    dest: "{{seeker_path}}"
+    owner: "{{app_admin_account}}"
+    group: "{{app_admin_account}}"
+    mode: '0775'
+
+- name: Uncompress tar file
+  unarchive:
+    src: "{{seeker_path}}{{app_tar_file}}"
+    dest: "{{seeker_path}}"  #{{app_dir}}"
+    remote_src: yes
+

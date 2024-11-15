@@ -1,5 +1,5 @@
 - name: initialize database
-  shell: /usr/bin/postgresql-setup  --initdb
+  shell: /usr/pgsql-14/bin/postgresql-14-setup initdb
 
 - name: Setup the main postgres config file - postgresql.conf
   replace:
@@ -30,6 +30,7 @@
     dest: "{{seeker_path}}"
     owner: "{{app_admin_account}}"
     group: "{{app_admin_account}}"
+
 
 
 - name: Prepare database - Set password and create app accounts

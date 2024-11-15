@@ -7887,3 +7887,2235 @@ when running as another user. To avoid this, create the remote_tmp dir with the 
 2023-07-26 18:08:02,593 p=57324 u=seeker n=ansible | changed: [192.168.1.131]
 2023-07-26 18:08:02,615 p=57324 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************
 2023-07-26 18:08:02,616 p=57324 u=seeker n=ansible | 192.168.1.131              : ok=38   changed=29   unreachable=0    failed=0    skipped=1    rescued=0    ignored=1   
+2024-11-14 18:42:58,326 p=5534 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:42:58,463 p=5534 u=seeker n=ansible | playbook: install_server_data_collector_role.yml
+2024-11-14 18:42:58,464 p=5534 u=seeker n=ansible |   play #1 (all): all	TAGS: []
+    pattern: ['all']
+    hosts (1):
+      192.168.0.57
+2024-11-14 18:43:02,755 p=5537 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:43:19,550 p=5537 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:43:19,606 p=5537 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:43:21,465 p=5537 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:43:21,474 p=5537 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:43:21,484 p=5537 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 18:43:21,488 p=5537 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 18:43:21,504 p=5537 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {
+    "assertion": "(ansible_os_family == \"RedHat\" and ansible_distribution_major_version == '8') or (ansible_distribution == \"Rocky\" and ansible_distribution_major_version == '8')",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "You need to be running RedHat or Rocky version 8.x"
+}
+2024-11-14 18:43:21,505 p=5537 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:43:21,505 p=5537 u=seeker n=ansible | 192.168.0.57               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-14 18:44:12,667 p=5594 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:44:19,292 p=5594 u=seeker n=ansible |  [ERROR]: User interrupted execution
+
+2024-11-14 18:44:21,159 p=5596 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:44:31,160 p=5596 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:44:31,183 p=5596 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:44:32,810 p=5596 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:44:32,817 p=5596 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:44:32,828 p=5596 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 18:44:32,832 p=5596 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 18:44:32,847 p=5596 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:44:32,851 p=5596 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 18:44:32,867 p=5596 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:44:32,870 p=5596 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 18:44:32,886 p=5596 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:44:32,889 p=5596 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 18:44:32,900 p=5596 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 18:44:32,904 p=5596 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:44:32,927 p=5596 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 18:44:32,933 p=5596 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 18:44:34,483 p=5596 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:44:34,488 p=5596 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 18:45:36,634 p=5596 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:45:36,637 p=5596 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 18:45:39,810 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 18:45:42,428 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 18:45:44,655 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 18:45:53,405 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 18:45:55,974 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 18:45:58,256 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 18:46:02,645 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 18:46:05,727 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 18:46:06,627 p=5596 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 18:46:08,832 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 18:46:11,801 p=5596 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 18:46:11,805 p=5596 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 18:46:13,870 p=5596 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:46:13,874 p=5596 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 18:46:44,393 p=5596 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:46:44,396 p=5596 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 18:46:47,187 p=5596 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 18:46:47,188 p=5596 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:46:47,190 p=5596 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 18:46:51,757 p=5596 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:46:51,760 p=5596 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 18:46:51,765 p=5596 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: postgresql-server postgresql. Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-11-14 18:46:51,766 p=5596 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:46:51,766 p=5596 u=seeker n=ansible | 192.168.0.57               : ok=13   changed=6    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-11-14 18:48:13,740 p=5942 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:48:22,709 p=5942 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:48:22,730 p=5942 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:48:25,826 p=5942 u=seeker n=ansible | fatal: [192.168.0.57]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.0.57 port 22: No route to host", "unreachable": true}
+2024-11-14 18:48:25,827 p=5942 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:48:25,827 p=5942 u=seeker n=ansible | 192.168.0.57               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-14 18:48:44,958 p=5950 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:48:51,519 p=5950 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:48:51,542 p=5950 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:48:53,333 p=5950 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:48:53,339 p=5950 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:48:53,349 p=5950 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 18:48:53,353 p=5950 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 18:48:53,369 p=5950 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:48:53,373 p=5950 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 18:48:53,389 p=5950 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:48:53,392 p=5950 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 18:48:53,406 p=5950 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:48:53,410 p=5950 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 18:48:53,420 p=5950 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 18:48:53,424 p=5950 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:48:53,440 p=5950 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 18:48:53,446 p=5950 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 18:48:54,812 p=5950 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:48:54,815 p=5950 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 18:50:02,497 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:50:02,500 p=5950 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 18:50:05,430 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 18:50:07,732 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 18:50:09,931 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 18:50:19,254 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 18:50:22,193 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 18:50:24,861 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 18:50:29,415 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 18:50:32,841 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 18:50:33,876 p=5950 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 18:50:35,912 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 18:50:38,867 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 18:50:38,872 p=5950 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 18:50:41,293 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:50:41,296 p=5950 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 18:51:05,211 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:51:05,214 p=5950 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 18:51:07,814 p=5950 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 18:51:07,814 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:51:07,817 p=5950 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 18:51:12,231 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:51:12,234 p=5950 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 18:51:24,553 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-14 18:51:26,022 p=5950 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-14 18:51:26,027 p=5950 u=seeker n=ansible | TASK [install-package : create required System accounts for isolated database access] ***********************************************************
+2024-11-14 18:51:26,742 p=5950 u=seeker n=ansible | ok: [192.168.0.57] => (item=seeker)
+2024-11-14 18:51:27,384 p=5950 u=seeker n=ansible | changed: [192.168.0.57] => (item=ro_seeker)
+2024-11-14 18:51:27,389 p=5950 u=seeker n=ansible | TASK [install-package : Set ACLs for db account] ************************************************************************************************
+2024-11-14 18:51:27,956 p=5950 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:51:27,959 p=5950 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:51:27,979 p=5950 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/3_setup_database.yml for 192.168.0.57
+2024-11-14 18:51:27,985 p=5950 u=seeker n=ansible | TASK [install-package : initialize database] ****************************************************************************************************
+2024-11-14 18:51:28,471 p=5950 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {"changed": true, "cmd": "/usr/pgsql-14/bin/postgresql-14-setup initdb", "delta": "0:00:00.004459", "end": "2024-11-14 18:51:18.888605", "msg": "non-zero return code", "rc": 127, "start": "2024-11-14 18:51:18.884146", "stderr": "/bin/sh: line 1: /usr/pgsql-14/bin/postgresql-14-setup: No such file or directory", "stderr_lines": ["/bin/sh: line 1: /usr/pgsql-14/bin/postgresql-14-setup: No such file or directory"], "stdout": "", "stdout_lines": []}
+2024-11-14 18:51:28,472 p=5950 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:51:28,472 p=5950 u=seeker n=ansible | 192.168.0.57               : ok=17   changed=9    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-11-14 18:52:50,761 p=6397 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:53:45,700 p=6411 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:53:55,117 p=6411 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:53:55,142 p=6411 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:54:05,178 p=6411 u=seeker n=ansible | fatal: [192.168.0.57]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.0.57 port 22: Connection timed out", "unreachable": true}
+2024-11-14 18:54:05,178 p=6411 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:54:05,178 p=6411 u=seeker n=ansible | 192.168.0.57               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-14 18:54:09,167 p=6420 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 18:54:15,999 p=6420 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 18:54:16,021 p=6420 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 18:54:17,860 p=6420 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:54:17,867 p=6420 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:54:17,878 p=6420 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 18:54:17,881 p=6420 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 18:54:17,897 p=6420 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:54:17,901 p=6420 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 18:54:17,918 p=6420 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 18:54:17,922 p=6420 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 18:54:17,936 p=6420 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:54:17,940 p=6420 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 18:54:17,951 p=6420 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 18:54:17,956 p=6420 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 18:54:17,973 p=6420 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 18:54:17,978 p=6420 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 18:54:19,358 p=6420 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 18:54:19,364 p=6420 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 18:55:24,765 p=6420 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:55:24,769 p=6420 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 18:55:27,833 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 18:55:30,182 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 18:55:32,145 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 18:55:38,994 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 18:55:47,486 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 18:55:50,473 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 18:55:56,072 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 18:55:59,418 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 18:56:00,429 p=6420 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 18:56:02,822 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 18:56:06,701 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 18:56:06,705 p=6420 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 18:56:09,029 p=6420 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:56:09,033 p=6420 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 18:56:35,459 p=6420 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:56:35,462 p=6420 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 18:56:40,532 p=6420 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 18:56:40,532 p=6420 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:56:40,535 p=6420 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 18:56:45,523 p=6420 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 18:56:45,526 p=6420 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 18:56:53,068 p=6420 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-14 18:56:54,554 p=6420 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-14 18:56:54,559 p=6420 u=seeker n=ansible | TASK [install-package : Start and enable database] **********************************************************************************************
+2024-11-14 18:56:55,921 p=6420 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {"changed": false, "msg": "Unable to start service postgresql: Job for postgresql.service failed because the control process exited with error code.\nSee \"systemctl status postgresql.service\" and \"journalctl -xeu postgresql.service\" for details.\n"}
+2024-11-14 18:56:55,922 p=6420 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 18:56:55,922 p=6420 u=seeker n=ansible | 192.168.0.57               : ok=14   changed=7    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-11-14 19:01:59,876 p=6944 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:02:06,561 p=6944 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 19:02:06,584 p=6944 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 19:02:16,622 p=6944 u=seeker n=ansible | fatal: [192.168.0.57]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.0.57 port 22: Connection timed out", "unreachable": true}
+2024-11-14 19:02:16,622 p=6944 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 19:02:16,622 p=6944 u=seeker n=ansible | 192.168.0.57               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-14 19:02:46,706 p=6954 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:02:48,725 p=6954 u=seeker n=ansible |  [ERROR]: User interrupted execution
+
+2024-11-14 19:02:49,485 p=6964 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:02:54,555 p=6964 u=seeker n=ansible |  [ERROR]: User interrupted execution
+
+2024-11-14 19:02:55,113 p=6967 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:03:03,565 p=6967 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 19:03:03,589 p=6967 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 19:03:05,436 p=6967 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:03:05,443 p=6967 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:03:05,453 p=6967 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 19:03:05,456 p=6967 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 19:03:05,471 p=6967 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:03:05,474 p=6967 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 19:03:05,489 p=6967 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:03:05,492 p=6967 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 19:03:05,507 p=6967 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:03:05,511 p=6967 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 19:03:05,521 p=6967 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 19:03:05,525 p=6967 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:03:05,540 p=6967 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 19:03:05,545 p=6967 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 19:03:06,927 p=6967 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:03:06,931 p=6967 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 19:04:15,423 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:04:15,426 p=6967 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 19:04:18,222 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 19:04:20,447 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 19:04:22,665 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 19:04:26,398 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 19:04:28,864 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 19:04:30,968 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 19:04:35,665 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 19:04:39,456 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 19:04:40,363 p=6967 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 19:04:42,390 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 19:04:45,664 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 19:04:45,668 p=6967 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 19:04:47,858 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:04:47,860 p=6967 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 19:05:18,856 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:05:18,860 p=6967 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 19:05:21,880 p=6967 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 19:05:21,880 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:05:21,883 p=6967 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 19:05:26,297 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:05:26,300 p=6967 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 19:05:34,896 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-14 19:05:36,268 p=6967 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-14 19:05:36,272 p=6967 u=seeker n=ansible | TASK [install-package : create required System accounts for isolated database access] ***********************************************************
+2024-11-14 19:05:36,848 p=6967 u=seeker n=ansible | ok: [192.168.0.57] => (item=seeker)
+2024-11-14 19:05:37,433 p=6967 u=seeker n=ansible | changed: [192.168.0.57] => (item=ro_seeker)
+2024-11-14 19:05:37,437 p=6967 u=seeker n=ansible | TASK [install-package : Set ACLs for db account] ************************************************************************************************
+2024-11-14 19:05:37,920 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:05:37,923 p=6967 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:05:37,939 p=6967 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/3_setup_database.yml for 192.168.0.57
+2024-11-14 19:05:37,944 p=6967 u=seeker n=ansible | TASK [install-package : initialize database] ****************************************************************************************************
+2024-11-14 19:05:39,754 p=6967 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:05:39,759 p=6967 u=seeker n=ansible | TASK [install-package : Setup the main postgres config file - postgresql.conf] ******************************************************************
+2024-11-14 19:05:40,297 p=6967 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {"changed": false, "msg": "Path /var/lib/pgsql/14/data/postgresql.conf does not exist !", "rc": 257}
+2024-11-14 19:05:40,298 p=6967 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 19:05:40,298 p=6967 u=seeker n=ansible | 192.168.0.57               : ok=18   changed=10   unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-11-14 19:09:41,606 p=7451 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:09:43,480 p=7451 u=seeker n=ansible |  [ERROR]: User interrupted execution
+
+2024-11-14 19:09:52,344 p=7453 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:09:59,069 p=7453 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 19:09:59,091 p=7453 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 19:10:08,219 p=7453 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:10:08,226 p=7453 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:10:08,236 p=7453 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 19:10:08,239 p=7453 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 19:10:08,254 p=7453 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:10:08,257 p=7453 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 19:10:08,272 p=7453 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:10:08,275 p=7453 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 19:10:08,292 p=7453 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:10:08,295 p=7453 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 19:10:08,304 p=7453 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 19:10:08,307 p=7453 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:10:08,322 p=7453 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 19:10:08,327 p=7453 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 19:10:09,734 p=7453 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:10:09,738 p=7453 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 19:11:15,007 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:11:15,011 p=7453 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 19:11:20,526 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 19:11:23,177 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 19:11:25,082 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 19:11:29,618 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 19:11:32,618 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 19:11:35,069 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 19:11:40,281 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 19:11:43,721 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 19:11:44,769 p=7453 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 19:11:47,631 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 19:11:52,006 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 19:11:52,011 p=7453 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 19:11:54,430 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:11:54,433 p=7453 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 19:12:16,643 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:16,647 p=7453 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 19:12:19,305 p=7453 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 19:12:19,305 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:19,309 p=7453 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 19:12:26,374 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:26,377 p=7453 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 19:12:35,353 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-14 19:12:36,844 p=7453 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-14 19:12:36,849 p=7453 u=seeker n=ansible | TASK [install-package : create required System accounts for isolated database access] ***********************************************************
+2024-11-14 19:12:37,472 p=7453 u=seeker n=ansible | ok: [192.168.0.57] => (item=seeker)
+2024-11-14 19:12:38,111 p=7453 u=seeker n=ansible | changed: [192.168.0.57] => (item=ro_seeker)
+2024-11-14 19:12:38,115 p=7453 u=seeker n=ansible | TASK [install-package : Set ACLs for db account] ************************************************************************************************
+2024-11-14 19:12:38,656 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:38,660 p=7453 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:12:38,677 p=7453 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/3_setup_database.yml for 192.168.0.57
+2024-11-14 19:12:38,683 p=7453 u=seeker n=ansible | TASK [install-package : initialize database] ****************************************************************************************************
+2024-11-14 19:12:40,642 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:40,646 p=7453 u=seeker n=ansible | TASK [install-package : Setup the main postgres config file - postgresql.conf] ******************************************************************
+2024-11-14 19:12:41,190 p=7453 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/postgresql.conf[0m
+[0;31m[0m[0;32m+++ after: /var/lib/pgsql/data/postgresql.conf[0m
+[0;32m[0m[0;36m@@ -57,7 +57,7 @@[0m
+[0;36m[0m 
+ # - Connection Settings -
+ 
+[0;31m-#listen_addresses = 'localhost'		# what IP address(es) to listen on;[0m
+[0;31m[0m[0;32m+listen_addresses = '*'		# what IP address(es) to listen on;[0m
+[0;32m[0m 					# comma-separated list of addresses;
+ 					# defaults to 'localhost'; use '*' for all
+ 					# (change requires restart)
+
+
+2024-11-14 19:12:41,191 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:41,195 p=7453 u=seeker n=ansible | TASK [install-package : Deploy the pg_hba template file] ****************************************************************************************
+2024-11-14 19:12:43,339 p=7453 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/pg_hba.conf[0m
+[0;31m[0m[0;32m+++ after: /home/seeker/.ansible/tmp/ansible-local-7453glt092kv/tmppxtftu5m/pg_hba.conf.j2[0m
+[0;32m[0m[0;36m@@ -1,93 +1,13 @@[0m
+[0;36m[0m[0;31m-# PostgreSQL Client Authentication Configuration File[0m
+[0;31m[0m[0;31m-# ===================================================[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Refer to the "Client Authentication" section in the PostgreSQL[0m
+[0;31m[0m[0;31m-# documentation for a complete description of this file.  A short[0m
+[0;31m[0m[0;31m-# synopsis follows.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file controls: which hosts are allowed to connect, how clients[0m
+[0;31m[0m[0;31m-# are authenticated, which PostgreSQL user names they can use, which[0m
+[0;31m[0m[0;31m-# databases they can access.  Records take one of these forms:[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# local         DATABASE  USER  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# host          DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostssl       DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnossl     DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostgssenc    DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnogssenc  DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# (The uppercase items must be replaced by actual values.)[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# The first field is the connection type: "local" is a Unix-domain[0m
+[0;31m[0m[0;31m-# socket, "host" is either a plain or SSL-encrypted TCP/IP socket,[0m
+[0;31m[0m[0;31m-# "hostssl" is an SSL-encrypted TCP/IP socket, and "hostnossl" is a[0m
+[0;31m[0m[0;31m-# non-SSL TCP/IP socket.  Similarly, "hostgssenc" uses a[0m
+[0;31m[0m[0;31m-# GSSAPI-encrypted TCP/IP socket, while "hostnogssenc" uses a[0m
+[0;31m[0m[0;31m-# non-GSSAPI socket.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# DATABASE can be "all", "sameuser", "samerole", "replication", a[0m
+[0;31m[0m[0;31m-# database name, or a comma-separated list thereof. The "all"[0m
+[0;31m[0m[0;31m-# keyword does not match "replication". Access to replication[0m
+[0;31m[0m[0;31m-# must be enabled in a separate record (see example below).[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# USER can be "all", a user name, a group name prefixed with "+", or a[0m
+[0;31m[0m[0;31m-# comma-separated list thereof.  In both the DATABASE and USER fields[0m
+[0;31m[0m[0;31m-# you can also write a file name prefixed with "@" to include names[0m
+[0;31m[0m[0;31m-# from a separate file.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# ADDRESS specifies the set of hosts the record matches.  It can be a[0m
+[0;31m[0m[0;31m-# host name, or it is made up of an IP address and a CIDR mask that is[0m
+[0;31m[0m[0;31m-# an integer (between 0 and 32 (IPv4) or 128 (IPv6) inclusive) that[0m
+[0;31m[0m[0;31m-# specifies the number of significant bits in the mask.  A host name[0m
+[0;31m[0m[0;31m-# that starts with a dot (.) matches a suffix of the actual host name.[0m
+[0;31m[0m[0;31m-# Alternatively, you can write an IP address and netmask in separate[0m
+[0;31m[0m[0;31m-# columns to specify the set of hosts.  Instead of a CIDR-address, you[0m
+[0;31m[0m[0;31m-# can write "samehost" to match any of the server's own IP addresses,[0m
+[0;31m[0m[0;31m-# or "samenet" to match any address in any subnet that the server is[0m
+[0;31m[0m[0;31m-# directly connected to.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# METHOD can be "trust", "reject", "md5", "password", "scram-sha-256",[0m
+[0;31m[0m[0;31m-# "gss", "sspi", "ident", "peer", "pam", "ldap", "radius" or "cert".[0m
+[0;31m[0m[0;31m-# Note that "password" sends passwords in clear text; "md5" or[0m
+[0;31m[0m[0;31m-# "scram-sha-256" are preferred since they send encrypted passwords.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# OPTIONS are a set of options for the authentication in the format[0m
+[0;31m[0m[0;31m-# NAME=VALUE.  The available options depend on the different[0m
+[0;31m[0m[0;31m-# authentication methods -- refer to the "Client Authentication"[0m
+[0;31m[0m[0;31m-# section in the documentation for a list of which options are[0m
+[0;31m[0m[0;31m-# available for which authentication methods.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Database and user names containing spaces, commas, quotes and other[0m
+[0;31m[0m[0;31m-# special characters must be quoted.  Quoting one of the keywords[0m
+[0;31m[0m[0;31m-# "all", "sameuser", "samerole" or "replication" makes the name lose[0m
+[0;31m[0m[0;31m-# its special character, and just match a database or username with[0m
+[0;31m[0m[0;31m-# that name.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file is read on server startup and when the server receives a[0m
+[0;31m[0m[0;31m-# SIGHUP signal.  If you edit the file on a running system, you have to[0m
+[0;31m[0m[0;31m-# SIGHUP the server for the changes to take effect, run "pg_ctl reload",[0m
+[0;31m[0m[0;31m-# or execute "SELECT pg_reload_conf()".[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Put your actual configuration here[0m
+[0;31m[0m[0;31m-# ----------------------------------[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# If you want to allow non-local connections, you need to add more[0m
+[0;31m[0m[0;31m-# "host" records.  In that case you will also need to make PostgreSQL[0m
+[0;31m[0m[0;31m-# listen on a non-local interface via the listen_addresses[0m
+[0;31m[0m[0;31m-# configuration parameter, or via the -i or -h command line switches.[0m
+[0;31m[0m[0;32m+# TYPE  DATABASE        USER            	ADDRESS                 METHOD[0m
+[0;32m[0m[0;32m+#Allow postgres to all database only through a local connection[0m
+[0;32m[0m[0;32m+local   all     	postgres 	       			peer[0m
+[0;32m[0m[0;32m+#Allow seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      seeker          			peer[0m
+[0;32m[0m[0;32m+local  serverdata      seeker				trust[0m
+[0;32m[0m[0;32m+#Allow ro_seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      ro_seeker                           peer[0m
+[0;32m[0m[0;32m+local  serverdata      ro_seeker                            trust[0m
+[0;32m[0m[0;32m+#Trust used here for install purposes. Line will be deleted post install[0m
+[0;32m[0m[0;32m+host    serverdata      seeker  192.168.1.1/24  		trust[0m
+[0;32m[0m 
+ 
+[0;31m-[0m
+[0;31m[0m[0;31m-# TYPE  DATABASE        USER            ADDRESS                 METHOD[0m
+[0;31m[0m[0;31m-[0m
+[0;31m[0m[0;31m-# "local" is for Unix domain socket connections only[0m
+[0;31m[0m[0;31m-local   all             all                                     peer[0m
+[0;31m[0m[0;31m-# IPv4 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-# IPv6 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             ::1/128                 ident[0m
+[0;31m[0m[0;31m-# Allow replication connections from localhost, by a user with the[0m
+[0;31m[0m[0;31m-# replication privilege.[0m
+[0;31m[0m[0;31m-local   replication     all                                     peer[0m
+[0;31m[0m[0;31m-host    replication     all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-host    replication     all             ::1/128                 ident[0m
+[0;31m[0m
+
+2024-11-14 19:12:43,340 p=7453 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:12:43,345 p=7453 u=seeker n=ansible | TASK [install-package : Enable and Start database] **********************************************************************************************
+2024-11-14 19:12:44,200 p=7453 u=seeker n=ansible | fatal: [192.168.0.57]: FAILED! => {"changed": false, "msg": "Could not find the requested service postgresql-14: host"}
+2024-11-14 19:12:44,201 p=7453 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 19:12:44,202 p=7453 u=seeker n=ansible | 192.168.0.57               : ok=20   changed=12   unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-11-14 19:14:58,822 p=7984 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-core
+ in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-14 19:15:07,897 p=7984 u=seeker n=ansible | PLAY [all] **************************************************************************************************************************************
+2024-11-14 19:15:07,920 p=7984 u=seeker n=ansible | TASK [Gathering Facts] **************************************************************************************************************************
+2024-11-14 19:15:13,369 p=7984 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:15:13,376 p=7984 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:15:13,387 p=7984 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-14 19:15:13,391 p=7984 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ***********************************************************************
+2024-11-14 19:15:13,406 p=7984 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:15:13,410 p=7984 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ***************************************************************************
+2024-11-14 19:15:13,425 p=7984 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-14 19:15:13,429 p=7984 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ***************************************************************************************
+2024-11-14 19:15:13,447 p=7984 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:15:13,450 p=7984 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] ****************************************************************************************
+2024-11-14 19:15:13,464 p=7984 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-14 19:15:13,468 p=7984 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:15:13,485 p=7984 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-14 19:15:13,490 p=7984 u=seeker n=ansible | TASK [install-package : Update all packages] ****************************************************************************************************
+2024-11-14 19:15:14,983 p=7984 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-14 19:15:14,987 p=7984 u=seeker n=ansible | TASK [install-package : Rebooting post update] **************************************************************************************************
+2024-11-14 19:16:17,274 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:16:17,278 p=7984 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] *************************************************************************
+2024-11-14 19:16:20,386 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-14 19:16:23,262 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-14 19:16:25,297 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-14 19:16:29,450 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-14 19:16:32,664 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-14 19:16:35,406 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-14 19:16:44,992 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-14 19:16:48,411 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-14 19:16:49,424 p=7984 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-14 19:16:52,187 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-14 19:16:55,480 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-14 19:16:55,484 p=7984 u=seeker n=ansible | TASK [install-package : Install epel-release] ***************************************************************************************************
+2024-11-14 19:16:57,778 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:16:57,781 p=7984 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] ***********************************************************************************************
+2024-11-14 19:17:28,761 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:28,764 p=7984 u=seeker n=ansible | TASK [install-package : Install psychopg2] ******************************************************************************************************
+2024-11-14 19:17:31,413 p=7984 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 19:17:31,413 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:31,416 p=7984 u=seeker n=ansible | TASK [install-package : Install ansible_runner] *************************************************************************************************
+2024-11-14 19:17:35,769 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:35,772 p=7984 u=seeker n=ansible | TASK [install-package : Install postgresql] *****************************************************************************************************
+2024-11-14 19:17:42,732 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-14 19:17:44,126 p=7984 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-14 19:17:44,129 p=7984 u=seeker n=ansible | TASK [install-package : create required System accounts for isolated database access] ***********************************************************
+2024-11-14 19:17:44,702 p=7984 u=seeker n=ansible | ok: [192.168.0.57] => (item=seeker)
+2024-11-14 19:17:45,276 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item=ro_seeker)
+2024-11-14 19:17:45,280 p=7984 u=seeker n=ansible | TASK [install-package : Set ACLs for db account] ************************************************************************************************
+2024-11-14 19:17:45,780 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:45,783 p=7984 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:17:45,799 p=7984 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/3_setup_database.yml for 192.168.0.57
+2024-11-14 19:17:45,804 p=7984 u=seeker n=ansible | TASK [install-package : initialize database] ****************************************************************************************************
+2024-11-14 19:17:47,916 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:47,921 p=7984 u=seeker n=ansible | TASK [install-package : Setup the main postgres config file - postgresql.conf] ******************************************************************
+2024-11-14 19:17:48,422 p=7984 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/postgresql.conf[0m
+[0;31m[0m[0;32m+++ after: /var/lib/pgsql/data/postgresql.conf[0m
+[0;32m[0m[0;36m@@ -57,7 +57,7 @@[0m
+[0;36m[0m 
+ # - Connection Settings -
+ 
+[0;31m-#listen_addresses = 'localhost'		# what IP address(es) to listen on;[0m
+[0;31m[0m[0;32m+listen_addresses = '*'		# what IP address(es) to listen on;[0m
+[0;32m[0m 					# comma-separated list of addresses;
+ 					# defaults to 'localhost'; use '*' for all
+ 					# (change requires restart)
+
+
+2024-11-14 19:17:48,422 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:48,426 p=7984 u=seeker n=ansible | TASK [install-package : Deploy the pg_hba template file] ****************************************************************************************
+2024-11-14 19:17:50,124 p=7984 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/pg_hba.conf[0m
+[0;31m[0m[0;32m+++ after: /home/seeker/.ansible/tmp/ansible-local-7984sdo0hkmx/tmpzzdhn36p/pg_hba.conf.j2[0m
+[0;32m[0m[0;36m@@ -1,93 +1,13 @@[0m
+[0;36m[0m[0;31m-# PostgreSQL Client Authentication Configuration File[0m
+[0;31m[0m[0;31m-# ===================================================[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Refer to the "Client Authentication" section in the PostgreSQL[0m
+[0;31m[0m[0;31m-# documentation for a complete description of this file.  A short[0m
+[0;31m[0m[0;31m-# synopsis follows.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file controls: which hosts are allowed to connect, how clients[0m
+[0;31m[0m[0;31m-# are authenticated, which PostgreSQL user names they can use, which[0m
+[0;31m[0m[0;31m-# databases they can access.  Records take one of these forms:[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# local         DATABASE  USER  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# host          DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostssl       DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnossl     DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostgssenc    DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnogssenc  DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# (The uppercase items must be replaced by actual values.)[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# The first field is the connection type: "local" is a Unix-domain[0m
+[0;31m[0m[0;31m-# socket, "host" is either a plain or SSL-encrypted TCP/IP socket,[0m
+[0;31m[0m[0;31m-# "hostssl" is an SSL-encrypted TCP/IP socket, and "hostnossl" is a[0m
+[0;31m[0m[0;31m-# non-SSL TCP/IP socket.  Similarly, "hostgssenc" uses a[0m
+[0;31m[0m[0;31m-# GSSAPI-encrypted TCP/IP socket, while "hostnogssenc" uses a[0m
+[0;31m[0m[0;31m-# non-GSSAPI socket.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# DATABASE can be "all", "sameuser", "samerole", "replication", a[0m
+[0;31m[0m[0;31m-# database name, or a comma-separated list thereof. The "all"[0m
+[0;31m[0m[0;31m-# keyword does not match "replication". Access to replication[0m
+[0;31m[0m[0;31m-# must be enabled in a separate record (see example below).[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# USER can be "all", a user name, a group name prefixed with "+", or a[0m
+[0;31m[0m[0;31m-# comma-separated list thereof.  In both the DATABASE and USER fields[0m
+[0;31m[0m[0;31m-# you can also write a file name prefixed with "@" to include names[0m
+[0;31m[0m[0;31m-# from a separate file.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# ADDRESS specifies the set of hosts the record matches.  It can be a[0m
+[0;31m[0m[0;31m-# host name, or it is made up of an IP address and a CIDR mask that is[0m
+[0;31m[0m[0;31m-# an integer (between 0 and 32 (IPv4) or 128 (IPv6) inclusive) that[0m
+[0;31m[0m[0;31m-# specifies the number of significant bits in the mask.  A host name[0m
+[0;31m[0m[0;31m-# that starts with a dot (.) matches a suffix of the actual host name.[0m
+[0;31m[0m[0;31m-# Alternatively, you can write an IP address and netmask in separate[0m
+[0;31m[0m[0;31m-# columns to specify the set of hosts.  Instead of a CIDR-address, you[0m
+[0;31m[0m[0;31m-# can write "samehost" to match any of the server's own IP addresses,[0m
+[0;31m[0m[0;31m-# or "samenet" to match any address in any subnet that the server is[0m
+[0;31m[0m[0;31m-# directly connected to.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# METHOD can be "trust", "reject", "md5", "password", "scram-sha-256",[0m
+[0;31m[0m[0;31m-# "gss", "sspi", "ident", "peer", "pam", "ldap", "radius" or "cert".[0m
+[0;31m[0m[0;31m-# Note that "password" sends passwords in clear text; "md5" or[0m
+[0;31m[0m[0;31m-# "scram-sha-256" are preferred since they send encrypted passwords.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# OPTIONS are a set of options for the authentication in the format[0m
+[0;31m[0m[0;31m-# NAME=VALUE.  The available options depend on the different[0m
+[0;31m[0m[0;31m-# authentication methods -- refer to the "Client Authentication"[0m
+[0;31m[0m[0;31m-# section in the documentation for a list of which options are[0m
+[0;31m[0m[0;31m-# available for which authentication methods.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Database and user names containing spaces, commas, quotes and other[0m
+[0;31m[0m[0;31m-# special characters must be quoted.  Quoting one of the keywords[0m
+[0;31m[0m[0;31m-# "all", "sameuser", "samerole" or "replication" makes the name lose[0m
+[0;31m[0m[0;31m-# its special character, and just match a database or username with[0m
+[0;31m[0m[0;31m-# that name.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file is read on server startup and when the server receives a[0m
+[0;31m[0m[0;31m-# SIGHUP signal.  If you edit the file on a running system, you have to[0m
+[0;31m[0m[0;31m-# SIGHUP the server for the changes to take effect, run "pg_ctl reload",[0m
+[0;31m[0m[0;31m-# or execute "SELECT pg_reload_conf()".[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Put your actual configuration here[0m
+[0;31m[0m[0;31m-# ----------------------------------[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# If you want to allow non-local connections, you need to add more[0m
+[0;31m[0m[0;31m-# "host" records.  In that case you will also need to make PostgreSQL[0m
+[0;31m[0m[0;31m-# listen on a non-local interface via the listen_addresses[0m
+[0;31m[0m[0;31m-# configuration parameter, or via the -i or -h command line switches.[0m
+[0;31m[0m[0;32m+# TYPE  DATABASE        USER            	ADDRESS                 METHOD[0m
+[0;32m[0m[0;32m+#Allow postgres to all database only through a local connection[0m
+[0;32m[0m[0;32m+local   all     	postgres 	       			peer[0m
+[0;32m[0m[0;32m+#Allow seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      seeker          			peer[0m
+[0;32m[0m[0;32m+local  serverdata      seeker				trust[0m
+[0;32m[0m[0;32m+#Allow ro_seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      ro_seeker                           peer[0m
+[0;32m[0m[0;32m+local  serverdata      ro_seeker                            trust[0m
+[0;32m[0m[0;32m+#Trust used here for install purposes. Line will be deleted post install[0m
+[0;32m[0m[0;32m+host    serverdata      seeker  192.168.1.1/24  		trust[0m
+[0;32m[0m 
+ 
+[0;31m-[0m
+[0;31m[0m[0;31m-# TYPE  DATABASE        USER            ADDRESS                 METHOD[0m
+[0;31m[0m[0;31m-[0m
+[0;31m[0m[0;31m-# "local" is for Unix domain socket connections only[0m
+[0;31m[0m[0;31m-local   all             all                                     peer[0m
+[0;31m[0m[0;31m-# IPv4 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-# IPv6 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             ::1/128                 ident[0m
+[0;31m[0m[0;31m-# Allow replication connections from localhost, by a user with the[0m
+[0;31m[0m[0;31m-# replication privilege.[0m
+[0;31m[0m[0;31m-local   replication     all                                     peer[0m
+[0;31m[0m[0;31m-host    replication     all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-host    replication     all             ::1/128                 ident[0m
+[0;31m[0m
+
+2024-11-14 19:17:50,125 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:50,128 p=7984 u=seeker n=ansible | TASK [install-package : Enable and Start database] **********************************************************************************************
+2024-11-14 19:17:51,240 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:51,243 p=7984 u=seeker n=ansible | TASK [install-package : Allow postgresql via firewall] ******************************************************************************************
+2024-11-14 19:17:51,980 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:51,983 p=7984 u=seeker n=ansible | TASK [install-package : Transfer the database_schema to create tables-views-etc] ****************************************************************
+2024-11-14 19:17:53,069 p=7984 u=seeker n=ansible | [0;31m--- before[0m
+[0;31m[0m[0;32m+++ after: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/files/schema_only.sql[0m
+[0;32m[0m[0;36m@@ -0,0 +1,627 @@[0m
+[0;36m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- PostgreSQL database dump[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+-- Dumped from database version 14.10[0m
+[0;32m[0m[0;32m+-- Dumped by pg_dump version 14.10[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET statement_timeout = 0;[0m
+[0;32m[0m[0;32m+SET lock_timeout = 0;[0m
+[0;32m[0m[0;32m+SET idle_in_transaction_session_timeout = 0;[0m
+[0;32m[0m[0;32m+SET client_encoding = 'UTF8';[0m
+[0;32m[0m[0;32m+SET standard_conforming_strings = on;[0m
+[0;32m[0m[0;32m+SELECT pg_catalog.set_config('search_path', '', false);[0m
+[0;32m[0m[0;32m+SET check_function_bodies = false;[0m
+[0;32m[0m[0;32m+SET xmloption = content;[0m
+[0;32m[0m[0;32m+SET client_min_messages = warning;[0m
+[0;32m[0m[0;32m+SET row_security = off;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: serverdata_schema; Type: SCHEMA; Schema: -; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE SCHEMA serverdata_schema;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER SCHEMA serverdata_schema OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET default_tablespace = '';[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET default_table_access_method = heap;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: a1servers; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.a1servers ([0m
+[0;32m[0m[0;32m+    serverid integer NOT NULL,[0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    os character varying(20),[0m
+[0;32m[0m[0;32m+    osrel character varying(5),[0m
+[0;32m[0m[0;32m+    selinux_status character varying(10),[0m
+[0;32m[0m[0;32m+    selinux_mode character varying(10),[0m
+[0;32m[0m[0;32m+    selinux_type character varying(10),[0m
+[0;32m[0m[0;32m+    total_m bigint,[0m
+[0;32m[0m[0;32m+    cpubrand character varying(100),[0m
+[0;32m[0m[0;32m+    cores integer,[0m
+[0;32m[0m[0;32m+    arch character varying(10),[0m
+[0;32m[0m[0;32m+    server_brand character varying(100),[0m
+[0;32m[0m[0;32m+    virt_role character varying(10),[0m
+[0;32m[0m[0;32m+    virt_type character varying(10),[0m
+[0;32m[0m[0;32m+    uptime integer[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.a1servers OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: command_line_options; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.command_line_options ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    cmnd_options character varying(200)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.command_line_options OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: external_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.external_routes ([0m
+[0;32m[0m[0;32m+    route_name character varying(50) NOT NULL,[0m
+[0;32m[0m[0;32m+    route_ip character varying(50) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.external_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: hpv_vm_inventory; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.hpv_vm_inventory ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    vmname character varying(30),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.hpv_vm_inventory OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: internal_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.internal_routes ([0m
+[0;32m[0m[0;32m+    route_name character varying(50) NOT NULL,[0m
+[0;32m[0m[0;32m+    route_ip character varying(50) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.internal_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: lvm_setup; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.lvm_setup ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    pvs_info character varying(100),[0m
+[0;32m[0m[0;32m+    vgs_info character varying(100),[0m
+[0;32m[0m[0;32m+    lvs_info character varying(100),[0m
+[0;32m[0m[0;32m+    dev_mapper character varying(100)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.lvm_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_interfaces; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_interfaces ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    ifname character varying(50),[0m
+[0;32m[0m[0;32m+    ipaddr character varying(30),[0m
+[0;32m[0m[0;32m+    netmask character varying(30)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_interfaces OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_routes ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    ifname character varying(50),[0m
+[0;32m[0m[0;32m+    destn character varying(30),[0m
+[0;32m[0m[0;32m+    gateway character varying(30),[0m
+[0;32m[0m[0;32m+    netmsk character varying(30)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_setup; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_setup ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    default_interface character varying(10),[0m
+[0;32m[0m[0;32m+    default_route inet,[0m
+[0;32m[0m[0;32m+    interface_type character varying(10),[0m
+[0;32m[0m[0;32m+    dns_entries character varying(200),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: rpm_packages; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.rpm_packages ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    rpm_name character varying(200),[0m
+[0;32m[0m[0;32m+    rpm_version character varying(200),[0m
+[0;32m[0m[0;32m+    rpm_release character varying(100)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.rpm_packages OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_cpu_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_cpu_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,[0m
+[0;32m[0m[0;32m+    cpu smallint NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_user numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_nice numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_systm numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_iowait numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_steal numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_idle numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_cpu_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_disk_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_disk_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    dev character varying(100) NOT NULL,[0m
+[0;32m[0m[0;32m+    tps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    wkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    areq_sz numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    aqu_sz numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    await numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    svctm numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_utilzed numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_disk_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_errors_net_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_errors_net_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    iface character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxerrs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txerrs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    colls numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxdrop numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txdrop numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txcarr numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxfram numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxfifo numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txfifo numeric(9,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_errors_net_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_mem_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_mem_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    kbmemfree integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbavail integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbmemused integer NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_memused numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    kbbuffers integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbcached integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbcommit integer NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_commit numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    kbactive integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbinact integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbdirty integer NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_mem_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_net_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_net_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    iface character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxpcks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txpcks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxcmps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txcmps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxxcsts numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_utilzed numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_net_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_page_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_page_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    pgins numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgouts numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    faults numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    mfaults numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgfrees numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgscanks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgscands numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgsteals numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_vmeff numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_page_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: storage_capacity; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.storage_capacity ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    mount character varying(150),[0m
+[0;32m[0m[0;32m+    fstype character varying(10),[0m
+[0;32m[0m[0;32m+    device character varying(50),[0m
+[0;32m[0m[0;32m+    size_available bigint,[0m
+[0;32m[0m[0;32m+    size_total bigint,[0m
+[0;32m[0m[0;32m+    size_available_human character varying(20),[0m
+[0;32m[0m[0;32m+    size_total_human character varying(20),[0m
+[0;32m[0m[0;32m+    moption character varying(300),[0m
+[0;32m[0m[0;32m+    uuid character varying(100),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.storage_capacity OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: view_interface_gateways; Type: VIEW; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE VIEW serverdata_schema.view_interface_gateways AS[0m
+[0;32m[0m[0;32m+ SELECT DISTINCT a1servers.hostname,[0m
+[0;32m[0m[0;32m+    network_routes.gateway,[0m
+[0;32m[0m[0;32m+    network_interfaces.ifname[0m
+[0;32m[0m[0;32m+   FROM ((serverdata_schema.network_interfaces[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.network_routes ON (((network_interfaces.ifname)::text = (network_routes.ifname)::text)))[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.a1servers ON (((a1servers.hostname)::text = (network_interfaces.hostname)::text)))[0m
+[0;32m[0m[0;32m+  ORDER BY a1servers.hostname;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.view_interface_gateways OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: view_lvm_setup; Type: VIEW; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE VIEW serverdata_schema.view_lvm_setup AS[0m
+[0;32m[0m[0;32m+ SELECT a1servers.serverid,[0m
+[0;32m[0m[0;32m+    a1servers.hostname,[0m
+[0;32m[0m[0;32m+    storage_capacity.mount,[0m
+[0;32m[0m[0;32m+    storage_capacity.fstype,[0m
+[0;32m[0m[0;32m+    lvm_setup.pvs_info,[0m
+[0;32m[0m[0;32m+    lvm_setup.vgs_info,[0m
+[0;32m[0m[0;32m+    lvm_setup.lvs_info,[0m
+[0;32m[0m[0;32m+    storage_capacity.device,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_available,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_available_human,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_total,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_total_human[0m
+[0;32m[0m[0;32m+   FROM ((serverdata_schema.storage_capacity[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.a1servers ON ((a1servers.serverid = storage_capacity.serverid)))[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.lvm_setup ON (((storage_capacity.device)::text = (lvm_setup.dev_mapper)::text)));[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.view_lvm_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: external_routes pk_external_routes; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.external_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_external_routes PRIMARY KEY (route_name, route_ip);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: internal_routes pk_internal_routes; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.internal_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_internal_routes PRIMARY KEY (route_name, route_ip);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: a1servers pk_servers_integer; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.a1servers[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_servers_integer PRIMARY KEY (serverid);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: command_line_options fk_command_line_options; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.command_line_options[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_command_line_options FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: hpv_vm_inventory fk_hpv_vm_inventory; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.hpv_vm_inventory[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_hpv_vm_inventory FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_interfaces fk_network_interface; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_interfaces[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_interface FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_routes fk_network_routes; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_routes FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_setup fk_network_setup; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_setup[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_setup FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: rpm_packages fk_rpm_packages; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.rpm_packages[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_rpm_packages FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: storage_capacity storage_capacity_fk; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.storage_capacity[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT storage_capacity_fk FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: lvm_setup storage_setup_fk; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.lvm_setup[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT storage_setup_fk FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: SCHEMA serverdata_schema; Type: ACL; Schema: -; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT USAGE ON SCHEMA serverdata_schema TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE a1servers; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.a1servers TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE command_line_options; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.command_line_options TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE external_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.external_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE hpv_vm_inventory; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.hpv_vm_inventory TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE internal_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.internal_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE lvm_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.lvm_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_interfaces; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_interfaces TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE rpm_packages; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.rpm_packages TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_cpu_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_cpu_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_disk_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_disk_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_errors_net_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_errors_net_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_mem_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_mem_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_net_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_net_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_page_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_page_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE storage_capacity; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.storage_capacity TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE view_interface_gateways; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.view_interface_gateways TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE view_lvm_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.view_lvm_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER DEFAULT PRIVILEGES FOR ROLE seeker IN SCHEMA serverdata_schema GRANT SELECT ON TABLES  TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- PostgreSQL database dump complete[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m
+
+2024-11-14 19:17:53,070 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:53,073 p=7984 u=seeker n=ansible | TASK [install-package : Set postgres database user password] ************************************************************************************
+2024-11-14 19:17:53,647 p=7984 u=seeker n=ansible | [WARNING]: Module remote_tmp /var/lib/pgsql/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running
+as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-14 19:17:53,647 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:53,650 p=7984 u=seeker n=ansible | TASK [install-package : Create role seeker and set password] ************************************************************************************
+2024-11-14 19:17:54,133 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:54,136 p=7984 u=seeker n=ansible | TASK [install-package : Make role seeker a super user] ******************************************************************************************
+2024-11-14 19:17:54,671 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:54,675 p=7984 u=seeker n=ansible | TASK [install-package : Create database serverdata] *********************************************************************************************
+2024-11-14 19:17:55,646 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:55,650 p=7984 u=seeker n=ansible | TASK [install-package : Change ownership of serverdata to role seeker] **************************************************************************
+2024-11-14 19:17:56,122 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:56,126 p=7984 u=seeker n=ansible | TASK [install-package : Create serverdata schema] ***********************************************************************************************
+2024-11-14 19:17:56,626 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:56,629 p=7984 u=seeker n=ansible | TASK [install-package : Set search path to server_data for user seeker] *************************************************************************
+2024-11-14 19:17:57,107 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:57,110 p=7984 u=seeker n=ansible | TASK [install-package : Install the Database Schema] ********************************************************************************************
+2024-11-14 19:17:57,693 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:17:57,696 p=7984 u=seeker n=ansible | TASK [install-package : Create and setup read only user - ro_seeker] ****************************************************************************
+2024-11-14 19:17:58,187 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'create user ro_seeker;'})
+2024-11-14 19:17:58,664 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'grant  usage on SCHEMA serverdata_schema to ro_seeker;'})
+2024-11-14 19:17:59,139 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'grant select on all tables in schema serverdata_schema to ro_seeker;'})
+2024-11-14 19:17:59,624 p=7984 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'alter default privileges  in schema serverdata_schema grant select on tables to ro_seeker;'})
+2024-11-14 19:17:59,629 p=7984 u=seeker n=ansible | TASK [install-package : include_tasks] **********************************************************************************************************
+2024-11-14 19:17:59,639 p=7984 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/4_install_app_files.yml for 192.168.0.57
+2024-11-14 19:17:59,646 p=7984 u=seeker n=ansible | TASK [install-package : Transer tar files to your remote server] ********************************************************************************
+2024-11-14 19:18:00,779 p=7984 u=seeker n=ansible | diff skipped: source file size is greater than 104448
+
+2024-11-14 19:18:00,779 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:18:00,783 p=7984 u=seeker n=ansible | TASK [install-package : Uncompress tar file] ****************************************************************************************************
+2024-11-14 19:18:01,805 p=7984 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-14 19:18:01,816 p=7984 u=seeker n=ansible | PLAY RECAP **************************************************************************************************************************************
+2024-11-14 19:18:01,816 p=7984 u=seeker n=ansible | 192.168.0.57               : ok=35   changed=26   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-11-15 13:18:21,901 p=12023 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the 
+M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions, use module_defaults instead. This feature will be removed from ansible-
+core in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-15 13:18:30,919 p=12023 u=seeker n=ansible | PLAY [all] ************************************************************************************************************************************
+2024-11-15 13:18:30,943 p=12023 u=seeker n=ansible | TASK [Gathering Facts] ************************************************************************************************************************
+2024-11-15 13:18:47,590 p=12023 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-15 13:18:47,598 p=12023 u=seeker n=ansible | TASK [install-package : include_tasks] ********************************************************************************************************
+2024-11-15 13:18:47,611 p=12023 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for 192.168.0.57
+2024-11-15 13:18:47,616 p=12023 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] *********************************************************************
+2024-11-15 13:18:47,636 p=12023 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-15 13:18:47,640 p=12023 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] *************************************************************************
+2024-11-15 13:18:47,670 p=12023 u=seeker n=ansible | ok: [192.168.0.57] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-15 13:18:47,676 p=12023 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] *************************************************************************************
+2024-11-15 13:18:47,702 p=12023 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-15 13:18:47,706 p=12023 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] **************************************************************************************
+2024-11-15 13:18:47,722 p=12023 u=seeker n=ansible | skipping: [192.168.0.57]
+2024-11-15 13:18:47,730 p=12023 u=seeker n=ansible | TASK [install-package : include_tasks] ********************************************************************************************************
+2024-11-15 13:18:47,756 p=12023 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for 192.168.0.57
+2024-11-15 13:18:47,762 p=12023 u=seeker n=ansible | TASK [install-package : Update all packages] **************************************************************************************************
+2024-11-15 13:18:51,373 p=12023 u=seeker n=ansible | ok: [192.168.0.57]
+2024-11-15 13:18:51,378 p=12023 u=seeker n=ansible | TASK [install-package : Rebooting post update] ************************************************************************************************
+2024-11-15 13:19:59,255 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:19:59,260 p=12023 u=seeker n=ansible | TASK [install-package : Install base packages to make your life easier] ***********************************************************************
+2024-11-15 13:20:02,555 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=tar)
+2024-11-15 13:20:04,701 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=wget)
+2024-11-15 13:20:06,872 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=yum-utils)
+2024-11-15 13:20:10,324 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=sysstat)
+2024-11-15 13:20:13,180 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=net-tools)
+2024-11-15 13:20:15,823 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=lsof)
+2024-11-15 13:20:20,522 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=policycoreutils-python-utils)
+2024-11-15 13:20:23,268 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=bash-completion)
+2024-11-15 13:20:24,174 p=12023 u=seeker n=ansible | ok: [192.168.0.57] => (item=python39)
+2024-11-15 13:20:26,259 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-psycopg2)
+2024-11-15 13:20:29,802 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=python3-pip)
+2024-11-15 13:20:29,807 p=12023 u=seeker n=ansible | TASK [install-package : Install epel-release] *************************************************************************************************
+2024-11-15 13:20:32,114 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:20:32,117 p=12023 u=seeker n=ansible | TASK [install-package : Install ansible on Rocky] *********************************************************************************************
+2024-11-15 13:21:05,218 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:05,223 p=12023 u=seeker n=ansible | TASK [install-package : Install psychopg2] ****************************************************************************************************
+2024-11-15 13:21:07,994 p=12023 u=seeker n=ansible | [WARNING]: Module remote_tmp /home/seeker/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running
+as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-15 13:21:07,995 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:07,999 p=12023 u=seeker n=ansible | TASK [install-package : Install ansible_runner] ***********************************************************************************************
+2024-11-15 13:21:12,457 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:12,460 p=12023 u=seeker n=ansible | TASK [install-package : Install postgresql] ***************************************************************************************************
+2024-11-15 13:21:19,317 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=postgresql-server)
+2024-11-15 13:21:20,651 p=12023 u=seeker n=ansible | ok: [192.168.0.57] => (item=postgresql)
+2024-11-15 13:21:20,656 p=12023 u=seeker n=ansible | TASK [install-package : create required System accounts for isolated database access] *********************************************************
+2024-11-15 13:21:21,318 p=12023 u=seeker n=ansible | ok: [192.168.0.57] => (item=seeker)
+2024-11-15 13:21:21,892 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item=ro_seeker)
+2024-11-15 13:21:21,896 p=12023 u=seeker n=ansible | TASK [install-package : Set ACLs for db account] **********************************************************************************************
+2024-11-15 13:21:22,390 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:22,394 p=12023 u=seeker n=ansible | TASK [install-package : include_tasks] ********************************************************************************************************
+2024-11-15 13:21:22,414 p=12023 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/3_setup_database.yml for 192.168.0.57
+2024-11-15 13:21:22,420 p=12023 u=seeker n=ansible | TASK [install-package : initialize database] **************************************************************************************************
+2024-11-15 13:21:24,721 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:24,725 p=12023 u=seeker n=ansible | TASK [install-package : Setup the main postgres config file - postgresql.conf] ****************************************************************
+2024-11-15 13:21:25,226 p=12023 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/postgresql.conf[0m
+[0;31m[0m[0;32m+++ after: /var/lib/pgsql/data/postgresql.conf[0m
+[0;32m[0m[0;36m@@ -57,7 +57,7 @@[0m
+[0;36m[0m 
+ # - Connection Settings -
+ 
+[0;31m-#listen_addresses = 'localhost'		# what IP address(es) to listen on;[0m
+[0;31m[0m[0;32m+listen_addresses = '*'		# what IP address(es) to listen on;[0m
+[0;32m[0m 					# comma-separated list of addresses;
+ 					# defaults to 'localhost'; use '*' for all
+ 					# (change requires restart)
+
+
+2024-11-15 13:21:25,226 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:25,231 p=12023 u=seeker n=ansible | TASK [install-package : Deploy the pg_hba template file] **************************************************************************************
+2024-11-15 13:21:27,876 p=12023 u=seeker n=ansible | [0;31m--- before: /var/lib/pgsql/data/pg_hba.conf[0m
+[0;31m[0m[0;32m+++ after: /home/seeker/.ansible/tmp/ansible-local-120238120chn3/tmpetk9yk7w/pg_hba.conf.j2[0m
+[0;32m[0m[0;36m@@ -1,93 +1,13 @@[0m
+[0;36m[0m[0;31m-# PostgreSQL Client Authentication Configuration File[0m
+[0;31m[0m[0;31m-# ===================================================[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Refer to the "Client Authentication" section in the PostgreSQL[0m
+[0;31m[0m[0;31m-# documentation for a complete description of this file.  A short[0m
+[0;31m[0m[0;31m-# synopsis follows.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file controls: which hosts are allowed to connect, how clients[0m
+[0;31m[0m[0;31m-# are authenticated, which PostgreSQL user names they can use, which[0m
+[0;31m[0m[0;31m-# databases they can access.  Records take one of these forms:[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# local         DATABASE  USER  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# host          DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostssl       DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnossl     DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostgssenc    DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-# hostnogssenc  DATABASE  USER  ADDRESS  METHOD  [OPTIONS][0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# (The uppercase items must be replaced by actual values.)[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# The first field is the connection type: "local" is a Unix-domain[0m
+[0;31m[0m[0;31m-# socket, "host" is either a plain or SSL-encrypted TCP/IP socket,[0m
+[0;31m[0m[0;31m-# "hostssl" is an SSL-encrypted TCP/IP socket, and "hostnossl" is a[0m
+[0;31m[0m[0;31m-# non-SSL TCP/IP socket.  Similarly, "hostgssenc" uses a[0m
+[0;31m[0m[0;31m-# GSSAPI-encrypted TCP/IP socket, while "hostnogssenc" uses a[0m
+[0;31m[0m[0;31m-# non-GSSAPI socket.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# DATABASE can be "all", "sameuser", "samerole", "replication", a[0m
+[0;31m[0m[0;31m-# database name, or a comma-separated list thereof. The "all"[0m
+[0;31m[0m[0;31m-# keyword does not match "replication". Access to replication[0m
+[0;31m[0m[0;31m-# must be enabled in a separate record (see example below).[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# USER can be "all", a user name, a group name prefixed with "+", or a[0m
+[0;31m[0m[0;31m-# comma-separated list thereof.  In both the DATABASE and USER fields[0m
+[0;31m[0m[0;31m-# you can also write a file name prefixed with "@" to include names[0m
+[0;31m[0m[0;31m-# from a separate file.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# ADDRESS specifies the set of hosts the record matches.  It can be a[0m
+[0;31m[0m[0;31m-# host name, or it is made up of an IP address and a CIDR mask that is[0m
+[0;31m[0m[0;31m-# an integer (between 0 and 32 (IPv4) or 128 (IPv6) inclusive) that[0m
+[0;31m[0m[0;31m-# specifies the number of significant bits in the mask.  A host name[0m
+[0;31m[0m[0;31m-# that starts with a dot (.) matches a suffix of the actual host name.[0m
+[0;31m[0m[0;31m-# Alternatively, you can write an IP address and netmask in separate[0m
+[0;31m[0m[0;31m-# columns to specify the set of hosts.  Instead of a CIDR-address, you[0m
+[0;31m[0m[0;31m-# can write "samehost" to match any of the server's own IP addresses,[0m
+[0;31m[0m[0;31m-# or "samenet" to match any address in any subnet that the server is[0m
+[0;31m[0m[0;31m-# directly connected to.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# METHOD can be "trust", "reject", "md5", "password", "scram-sha-256",[0m
+[0;31m[0m[0;31m-# "gss", "sspi", "ident", "peer", "pam", "ldap", "radius" or "cert".[0m
+[0;31m[0m[0;31m-# Note that "password" sends passwords in clear text; "md5" or[0m
+[0;31m[0m[0;31m-# "scram-sha-256" are preferred since they send encrypted passwords.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# OPTIONS are a set of options for the authentication in the format[0m
+[0;31m[0m[0;31m-# NAME=VALUE.  The available options depend on the different[0m
+[0;31m[0m[0;31m-# authentication methods -- refer to the "Client Authentication"[0m
+[0;31m[0m[0;31m-# section in the documentation for a list of which options are[0m
+[0;31m[0m[0;31m-# available for which authentication methods.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Database and user names containing spaces, commas, quotes and other[0m
+[0;31m[0m[0;31m-# special characters must be quoted.  Quoting one of the keywords[0m
+[0;31m[0m[0;31m-# "all", "sameuser", "samerole" or "replication" makes the name lose[0m
+[0;31m[0m[0;31m-# its special character, and just match a database or username with[0m
+[0;31m[0m[0;31m-# that name.[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# This file is read on server startup and when the server receives a[0m
+[0;31m[0m[0;31m-# SIGHUP signal.  If you edit the file on a running system, you have to[0m
+[0;31m[0m[0;31m-# SIGHUP the server for the changes to take effect, run "pg_ctl reload",[0m
+[0;31m[0m[0;31m-# or execute "SELECT pg_reload_conf()".[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# Put your actual configuration here[0m
+[0;31m[0m[0;31m-# ----------------------------------[0m
+[0;31m[0m[0;31m-#[0m
+[0;31m[0m[0;31m-# If you want to allow non-local connections, you need to add more[0m
+[0;31m[0m[0;31m-# "host" records.  In that case you will also need to make PostgreSQL[0m
+[0;31m[0m[0;31m-# listen on a non-local interface via the listen_addresses[0m
+[0;31m[0m[0;31m-# configuration parameter, or via the -i or -h command line switches.[0m
+[0;31m[0m[0;32m+# TYPE  DATABASE        USER            	ADDRESS                 METHOD[0m
+[0;32m[0m[0;32m+#Allow postgres to all database only through a local connection[0m
+[0;32m[0m[0;32m+local   all     	postgres 	       			peer[0m
+[0;32m[0m[0;32m+#Allow seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      seeker          			peer[0m
+[0;32m[0m[0;32m+local  serverdata      seeker				trust[0m
+[0;32m[0m[0;32m+#Allow ro_seeker access only to serverdata database only through a local connection[0m
+[0;32m[0m[0;32m+local   serverdata      ro_seeker                           peer[0m
+[0;32m[0m[0;32m+local  serverdata      ro_seeker                            trust[0m
+[0;32m[0m[0;32m+#Trust used here for install purposes. Line will be deleted post install[0m
+[0;32m[0m[0;32m+host    serverdata      seeker  192.168.1.1/24  		trust[0m
+[0;32m[0m 
+ 
+[0;31m-[0m
+[0;31m[0m[0;31m-# TYPE  DATABASE        USER            ADDRESS                 METHOD[0m
+[0;31m[0m[0;31m-[0m
+[0;31m[0m[0;31m-# "local" is for Unix domain socket connections only[0m
+[0;31m[0m[0;31m-local   all             all                                     peer[0m
+[0;31m[0m[0;31m-# IPv4 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-# IPv6 local connections:[0m
+[0;31m[0m[0;31m-host    all             all             ::1/128                 ident[0m
+[0;31m[0m[0;31m-# Allow replication connections from localhost, by a user with the[0m
+[0;31m[0m[0;31m-# replication privilege.[0m
+[0;31m[0m[0;31m-local   replication     all                                     peer[0m
+[0;31m[0m[0;31m-host    replication     all             127.0.0.1/32            ident[0m
+[0;31m[0m[0;31m-host    replication     all             ::1/128                 ident[0m
+[0;31m[0m
+
+2024-11-15 13:21:27,876 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:27,880 p=12023 u=seeker n=ansible | TASK [install-package : Enable and Start database] ********************************************************************************************
+2024-11-15 13:21:29,015 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:29,018 p=12023 u=seeker n=ansible | TASK [install-package : Allow postgresql via firewall] ****************************************************************************************
+2024-11-15 13:21:29,738 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:29,741 p=12023 u=seeker n=ansible | TASK [install-package : Transfer the database_schema to create tables-views-etc] **************************************************************
+2024-11-15 13:21:30,816 p=12023 u=seeker n=ansible | [0;31m--- before[0m
+[0;31m[0m[0;32m+++ after: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/files/schema_only.sql[0m
+[0;32m[0m[0;36m@@ -0,0 +1,627 @@[0m
+[0;36m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- PostgreSQL database dump[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+-- Dumped from database version 14.10[0m
+[0;32m[0m[0;32m+-- Dumped by pg_dump version 14.10[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET statement_timeout = 0;[0m
+[0;32m[0m[0;32m+SET lock_timeout = 0;[0m
+[0;32m[0m[0;32m+SET idle_in_transaction_session_timeout = 0;[0m
+[0;32m[0m[0;32m+SET client_encoding = 'UTF8';[0m
+[0;32m[0m[0;32m+SET standard_conforming_strings = on;[0m
+[0;32m[0m[0;32m+SELECT pg_catalog.set_config('search_path', '', false);[0m
+[0;32m[0m[0;32m+SET check_function_bodies = false;[0m
+[0;32m[0m[0;32m+SET xmloption = content;[0m
+[0;32m[0m[0;32m+SET client_min_messages = warning;[0m
+[0;32m[0m[0;32m+SET row_security = off;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: serverdata_schema; Type: SCHEMA; Schema: -; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE SCHEMA serverdata_schema;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER SCHEMA serverdata_schema OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET default_tablespace = '';[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+SET default_table_access_method = heap;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: a1servers; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.a1servers ([0m
+[0;32m[0m[0;32m+    serverid integer NOT NULL,[0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    os character varying(20),[0m
+[0;32m[0m[0;32m+    osrel character varying(5),[0m
+[0;32m[0m[0;32m+    selinux_status character varying(10),[0m
+[0;32m[0m[0;32m+    selinux_mode character varying(10),[0m
+[0;32m[0m[0;32m+    selinux_type character varying(10),[0m
+[0;32m[0m[0;32m+    total_m bigint,[0m
+[0;32m[0m[0;32m+    cpubrand character varying(100),[0m
+[0;32m[0m[0;32m+    cores integer,[0m
+[0;32m[0m[0;32m+    arch character varying(10),[0m
+[0;32m[0m[0;32m+    server_brand character varying(100),[0m
+[0;32m[0m[0;32m+    virt_role character varying(10),[0m
+[0;32m[0m[0;32m+    virt_type character varying(10),[0m
+[0;32m[0m[0;32m+    uptime integer[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.a1servers OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: command_line_options; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.command_line_options ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    cmnd_options character varying(200)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.command_line_options OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: external_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.external_routes ([0m
+[0;32m[0m[0;32m+    route_name character varying(50) NOT NULL,[0m
+[0;32m[0m[0;32m+    route_ip character varying(50) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.external_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: hpv_vm_inventory; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.hpv_vm_inventory ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    vmname character varying(30),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.hpv_vm_inventory OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: internal_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.internal_routes ([0m
+[0;32m[0m[0;32m+    route_name character varying(50) NOT NULL,[0m
+[0;32m[0m[0;32m+    route_ip character varying(50) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.internal_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: lvm_setup; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.lvm_setup ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    pvs_info character varying(100),[0m
+[0;32m[0m[0;32m+    vgs_info character varying(100),[0m
+[0;32m[0m[0;32m+    lvs_info character varying(100),[0m
+[0;32m[0m[0;32m+    dev_mapper character varying(100)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.lvm_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_interfaces; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_interfaces ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    ifname character varying(50),[0m
+[0;32m[0m[0;32m+    ipaddr character varying(30),[0m
+[0;32m[0m[0;32m+    netmask character varying(30)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_interfaces OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_routes; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_routes ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    ifname character varying(50),[0m
+[0;32m[0m[0;32m+    destn character varying(30),[0m
+[0;32m[0m[0;32m+    gateway character varying(30),[0m
+[0;32m[0m[0;32m+    netmsk character varying(30)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_routes OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_setup; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.network_setup ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    default_interface character varying(10),[0m
+[0;32m[0m[0;32m+    default_route inet,[0m
+[0;32m[0m[0;32m+    interface_type character varying(10),[0m
+[0;32m[0m[0;32m+    dns_entries character varying(200),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.network_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: rpm_packages; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.rpm_packages ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    rpm_name character varying(200),[0m
+[0;32m[0m[0;32m+    rpm_version character varying(200),[0m
+[0;32m[0m[0;32m+    rpm_release character varying(100)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.rpm_packages OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_cpu_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_cpu_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,[0m
+[0;32m[0m[0;32m+    cpu smallint NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_user numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_nice numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_systm numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_iowait numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_steal numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_idle numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_cpu_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_disk_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_disk_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    dev character varying(100) NOT NULL,[0m
+[0;32m[0m[0;32m+    tps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    wkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    areq_sz numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    aqu_sz numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    await numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    svctm numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_utilzed numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_disk_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_errors_net_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_errors_net_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    iface character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxerrs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txerrs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    colls numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxdrop numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txdrop numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txcarr numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxfram numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxfifo numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txfifo numeric(9,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_errors_net_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_mem_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_mem_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    kbmemfree integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbavail integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbmemused integer NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_memused numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    kbbuffers integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbcached integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbcommit integer NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_commit numeric(5,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    kbactive integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbinact integer NOT NULL,[0m
+[0;32m[0m[0;32m+    kbdirty integer NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_mem_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_net_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_net_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(30) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    iface character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxpcks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txpcks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txkbs numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxcmps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    txcmps numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    rxxcsts numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_utilzed numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_net_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: sar_page_perf; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.sar_page_perf ([0m
+[0;32m[0m[0;32m+    hostname character varying(128) NOT NULL,[0m
+[0;32m[0m[0;32m+    "interval" integer NOT NULL,[0m
+[0;32m[0m[0;32m+    "timestamp" timestamp with time zone DEFAULT CURRENT_TIMESTAMP,[0m
+[0;32m[0m[0;32m+    pgins numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgouts numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    faults numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    mfaults numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgfrees numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgscanks numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgscands numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pgsteals numeric(9,2) NOT NULL,[0m
+[0;32m[0m[0;32m+    pct_vmeff numeric(5,2) NOT NULL[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.sar_page_perf OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: storage_capacity; Type: TABLE; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE TABLE serverdata_schema.storage_capacity ([0m
+[0;32m[0m[0;32m+    serverid integer,[0m
+[0;32m[0m[0;32m+    hostname character varying(50),[0m
+[0;32m[0m[0;32m+    mount character varying(150),[0m
+[0;32m[0m[0;32m+    fstype character varying(10),[0m
+[0;32m[0m[0;32m+    device character varying(50),[0m
+[0;32m[0m[0;32m+    size_available bigint,[0m
+[0;32m[0m[0;32m+    size_total bigint,[0m
+[0;32m[0m[0;32m+    size_available_human character varying(20),[0m
+[0;32m[0m[0;32m+    size_total_human character varying(20),[0m
+[0;32m[0m[0;32m+    moption character varying(300),[0m
+[0;32m[0m[0;32m+    uuid character varying(100),[0m
+[0;32m[0m[0;32m+    date_cpt character varying(10),[0m
+[0;32m[0m[0;32m+    time_cpt character varying(10)[0m
+[0;32m[0m[0;32m+);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.storage_capacity OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: view_interface_gateways; Type: VIEW; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE VIEW serverdata_schema.view_interface_gateways AS[0m
+[0;32m[0m[0;32m+ SELECT DISTINCT a1servers.hostname,[0m
+[0;32m[0m[0;32m+    network_routes.gateway,[0m
+[0;32m[0m[0;32m+    network_interfaces.ifname[0m
+[0;32m[0m[0;32m+   FROM ((serverdata_schema.network_interfaces[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.network_routes ON (((network_interfaces.ifname)::text = (network_routes.ifname)::text)))[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.a1servers ON (((a1servers.hostname)::text = (network_interfaces.hostname)::text)))[0m
+[0;32m[0m[0;32m+  ORDER BY a1servers.hostname;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.view_interface_gateways OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: view_lvm_setup; Type: VIEW; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+CREATE VIEW serverdata_schema.view_lvm_setup AS[0m
+[0;32m[0m[0;32m+ SELECT a1servers.serverid,[0m
+[0;32m[0m[0;32m+    a1servers.hostname,[0m
+[0;32m[0m[0;32m+    storage_capacity.mount,[0m
+[0;32m[0m[0;32m+    storage_capacity.fstype,[0m
+[0;32m[0m[0;32m+    lvm_setup.pvs_info,[0m
+[0;32m[0m[0;32m+    lvm_setup.vgs_info,[0m
+[0;32m[0m[0;32m+    lvm_setup.lvs_info,[0m
+[0;32m[0m[0;32m+    storage_capacity.device,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_available,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_available_human,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_total,[0m
+[0;32m[0m[0;32m+    storage_capacity.size_total_human[0m
+[0;32m[0m[0;32m+   FROM ((serverdata_schema.storage_capacity[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.a1servers ON ((a1servers.serverid = storage_capacity.serverid)))[0m
+[0;32m[0m[0;32m+     JOIN serverdata_schema.lvm_setup ON (((storage_capacity.device)::text = (lvm_setup.dev_mapper)::text)));[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE serverdata_schema.view_lvm_setup OWNER TO seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: external_routes pk_external_routes; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.external_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_external_routes PRIMARY KEY (route_name, route_ip);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: internal_routes pk_internal_routes; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.internal_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_internal_routes PRIMARY KEY (route_name, route_ip);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: a1servers pk_servers_integer; Type: CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.a1servers[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT pk_servers_integer PRIMARY KEY (serverid);[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: command_line_options fk_command_line_options; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.command_line_options[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_command_line_options FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: hpv_vm_inventory fk_hpv_vm_inventory; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.hpv_vm_inventory[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_hpv_vm_inventory FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_interfaces fk_network_interface; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_interfaces[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_interface FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_routes fk_network_routes; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_routes[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_routes FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: network_setup fk_network_setup; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.network_setup[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_network_setup FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: rpm_packages fk_rpm_packages; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.rpm_packages[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT fk_rpm_packages FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: storage_capacity storage_capacity_fk; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.storage_capacity[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT storage_capacity_fk FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: lvm_setup storage_setup_fk; Type: FK CONSTRAINT; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER TABLE ONLY serverdata_schema.lvm_setup[0m
+[0;32m[0m[0;32m+    ADD CONSTRAINT storage_setup_fk FOREIGN KEY (serverid) REFERENCES serverdata_schema.a1servers(serverid) MATCH FULL;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: SCHEMA serverdata_schema; Type: ACL; Schema: -; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT USAGE ON SCHEMA serverdata_schema TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE a1servers; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.a1servers TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE command_line_options; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.command_line_options TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE external_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.external_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE hpv_vm_inventory; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.hpv_vm_inventory TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE internal_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.internal_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE lvm_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.lvm_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_interfaces; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_interfaces TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_routes; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_routes TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE network_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.network_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE rpm_packages; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.rpm_packages TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_cpu_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_cpu_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_disk_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_disk_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_errors_net_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_errors_net_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_mem_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_mem_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_net_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_net_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE sar_page_perf; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.sar_page_perf TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE storage_capacity; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.storage_capacity TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE view_interface_gateways; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.view_interface_gateways TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: TABLE view_lvm_setup; Type: ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+GRANT SELECT ON TABLE serverdata_schema.view_lvm_setup TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: serverdata_schema; Owner: seeker[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+ALTER DEFAULT PRIVILEGES FOR ROLE seeker IN SCHEMA serverdata_schema GRANT SELECT ON TABLES  TO ro_seeker;[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+-- PostgreSQL database dump complete[0m
+[0;32m[0m[0;32m+--[0m
+[0;32m[0m[0;32m+[0m
+[0;32m[0m
+
+2024-11-15 13:21:30,816 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:30,819 p=12023 u=seeker n=ansible | TASK [install-package : Set postgres database user password] **********************************************************************************
+2024-11-15 13:21:31,398 p=12023 u=seeker n=ansible | [WARNING]: Module remote_tmp /var/lib/pgsql/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running
+as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-11-15 13:21:31,398 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:31,401 p=12023 u=seeker n=ansible | TASK [install-package : Create role seeker and set password] **********************************************************************************
+2024-11-15 13:21:31,880 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:31,883 p=12023 u=seeker n=ansible | TASK [install-package : Make role seeker a super user] ****************************************************************************************
+2024-11-15 13:21:32,419 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:32,422 p=12023 u=seeker n=ansible | TASK [install-package : Create database serverdata] *******************************************************************************************
+2024-11-15 13:21:33,109 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:33,113 p=12023 u=seeker n=ansible | TASK [install-package : Change ownership of serverdata to role seeker] ************************************************************************
+2024-11-15 13:21:33,578 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:33,582 p=12023 u=seeker n=ansible | TASK [install-package : Create serverdata schema] *********************************************************************************************
+2024-11-15 13:21:34,063 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:34,066 p=12023 u=seeker n=ansible | TASK [install-package : Set search path to server_data for user seeker] ***********************************************************************
+2024-11-15 13:21:34,536 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:34,540 p=12023 u=seeker n=ansible | TASK [install-package : Install the Database Schema] ******************************************************************************************
+2024-11-15 13:21:35,118 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:35,121 p=12023 u=seeker n=ansible | TASK [install-package : Create and setup read only user - ro_seeker] **************************************************************************
+2024-11-15 13:21:35,597 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'create user ro_seeker;'})
+2024-11-15 13:21:36,054 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'grant  usage on SCHEMA serverdata_schema to ro_seeker;'})
+2024-11-15 13:21:36,509 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'grant select on all tables in schema serverdata_schema to ro_seeker;'})
+2024-11-15 13:21:37,012 p=12023 u=seeker n=ansible | changed: [192.168.0.57] => (item={'perm': 'alter default privileges  in schema serverdata_schema grant select on tables to ro_seeker;'})
+2024-11-15 13:21:37,017 p=12023 u=seeker n=ansible | TASK [install-package : include_tasks] ********************************************************************************************************
+2024-11-15 13:21:37,029 p=12023 u=seeker n=ansible | included: /home/seeker/stash/my_projects/install_server_data_collector/roles/install-package/tasks/4_install_app_files.yml for 192.168.0.57
+2024-11-15 13:21:37,039 p=12023 u=seeker n=ansible | TASK [install-package : Transer tar files to your remote server] ******************************************************************************
+2024-11-15 13:21:38,158 p=12023 u=seeker n=ansible | diff skipped: source file size is greater than 104448
+
+2024-11-15 13:21:38,158 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:38,163 p=12023 u=seeker n=ansible | TASK [install-package : Uncompress tar file] **************************************************************************************************
+2024-11-15 13:21:39,321 p=12023 u=seeker n=ansible | changed: [192.168.0.57]
+2024-11-15 13:21:39,333 p=12023 u=seeker n=ansible | PLAY RECAP ************************************************************************************************************************************
+2024-11-15 13:21:39,333 p=12023 u=seeker n=ansible | 192.168.0.57               : ok=35   changed=26   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

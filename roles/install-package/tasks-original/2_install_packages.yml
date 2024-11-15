@@ -43,35 +43,27 @@
   become_user: seeker
   ignore_errors: yes
 
-#- name: Disable postgresql module repo
-#  shell: dnf -qy module disable postgresql
+- name: Disable postgresql module repo
+  shell: dnf -qy module disable postgresql
 
-#- name: Install the postgres repo
-#package:
-#    name: "{{postgres_repo}}"
-#    state: present
-#    disable_gpg_check: yes
-
-#- name: Install postgresql server
-#  package:
-#    name: "{{postgres_server}}"
-#    #name: postgresql14-server
-#    state: latest
-#    disable_gpg_check: yes
-
-#- name: Install postgresql contrib packages
-#  package:
-#    name: "{{posgres_contrib}}"       
-    #name: postgresql14-contrib
-    #    state: latest
-
-- name: Install postgresql
+- name: Install the postgres repo
   package:
-    name: "{{item}}"
+    name: "{{postgres_repo}}"
+    state: present
+    disable_gpg_check: yes
+
+- name: Install postgresql server
+  package:
+    name: "{{postgres_server}}"
+    #name: postgresql14-server
     state: latest
-  loop: 
-    - postgresql-server
-    - postgresql
+    disable_gpg_check: yes
+
+- name: Install postgresql contrib packages
+  package:
+    name: "{{posgres_contrib}}"       
+    #name: postgresql14-contrib
+    state: latest
 
 - name: create required System accounts for isolated database access
   user:

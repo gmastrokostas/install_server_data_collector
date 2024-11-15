@@ -26,14 +26,17 @@ base_packages:
 - python3-pip
 
 #service names -- DO NOT change unless you know what you are doing
-postgres_vnum: postgresql-14
+#postgres_vnum: postgresql-14
+postgres_vnum: postgresql
 postgres_serv: postgresql
 postgres_default: postgres
 #postgres_pass: zxc123
 
 # vars related to config files
-postgres_conf:  /var/lib/pgsql/14/data/postgresql.conf
-postgres_pghba_conf: /var/lib/pgsql/14/data/pg_hba.conf
+#postgres_conf:  /var/lib/pgsql/14/data/postgresql.conf
+postgres_conf:  /var/lib/pgsql/data/postgresql.conf
+#postgres_pghba_conf: /var/lib/pgsql/14/data/pg_hba.conf
+postgres_pghba_conf: /var/lib/pgsql/data/pg_hba.conf
 
 #Vars related to DB admin account 
 #Vars related to seeker home directory
