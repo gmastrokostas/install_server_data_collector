@@ -1,0 +1,13 @@
+- hosts: all
+  become: True
+  vars_prompt:
+    - name: app_adm_acnt_pass
+      prompt: "set Password for the admin account for your database"
+
+    - name: app_ro_acnt_pass
+      prompt: "set password for your read only database account"
+
+    - name: postgres_pass
+      prompt: "Set password for your database"
+  roles:
+  - role: install-package

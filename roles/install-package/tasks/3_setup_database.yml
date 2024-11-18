@@ -1,0 +1,92 @@
+- name: initialize database
+  shell: /usr/bin/postgresql-setup  --initdb
+
+- name: Setup the main postgres config file - postgresql.conf
+  replace:
+    path: "{{postgres_conf}}"
+    regexp:  "^#listen_addresses = 'localhost'"
+    replace: "listen_addresses = '*'"
+
+- name: Deploy the pg_hba template file
+  template:
+    src: pg_hba.conf.j2
+    dest: "{{postgres_pghba_conf}}"
+
+- name: Enable and Start database
+  service:
+    name: "{{postgres_vnum}}"
+    state: started
+    enabled: yes
+
+- name: Allow postgresql via firewall
+  firewalld:
+        service: "{{postgres_serv}}"
+        permanent: yes
+        state: enabled
+
+- name: Transfer the database_schema to create tables-views-etc
+  copy:
+    src: "{{db_schema}}"
+    dest: "{{seeker_path}}"
+    owner: "{{app_admin_account}}"
+    group: "{{app_admin_account}}"
+
+
+- name: Prepare database - Set password and create app accounts
+  become: yes
+  become_method: sudo
+  become_user: "{{postgres_default}}"
+  block:
+    - name: Set postgres database user password
+      postgresql_user:
+        db: "{{postgres_default}}"
+        name: "{{postgres_default}}"
+        password: "{{postgres_pass}}"
+        expires: infinity
+
+    - name: Create role seeker and set password
+      postgresql_user:
+        name: "{{app_admin_account}}"
+        password: "{{app_adm_acnt_pass}}"
+        expires: infinity
+
+    - name: Make role seeker a super user
+      postgresql_query:
+        query: alter role seeker superuser
+        db: "{{postgres_default}}"
+
+    - name: Create database serverdata
+      postgresql_db:
+        name: "{{db_name}}"
+
+    - name: Change ownership of serverdata to role seeker
+      postgresql_query:
+        query: ALTER DATABASE "{{db_name}}"  OWNER TO "{{app_admin_account}}";
+        db: "{{postgres_default}}"
+
+- name: Setup the application schema, roles, complete setup of application database
+  become: yes
+  become_method: sudo
+  become_user: "{{app_admin_account}}"
+  block:
+    - name: Create serverdata schema
+      postgresql_query:
+        query: create schema serverdata_schema;
+        login_user: "{{app_admin_account}}"
+        db: "{{db_name}}"
+
+    - name: Set search path to server_data for user seeker
+      postgresql_query:
+        query: alter database serverdata set search_path to serverdata_schema;;
+        db: "{{db_name}}"
+        login_user: "{{app_admin_account}}"
+
+    - name: Install the Database Schema
+      shell: psql -f {{seeker_path}}{{db_schema}}  -d "{{db_name}}"
+
+    - name: Create and setup read only user - ro_seeker
+      postgresql_query:
+        query: "{{item.perm}}"
+        db: "{{db_name}}"
+        login_user: "{{app_admin_account}}"
+      loop: "{{grants}}"

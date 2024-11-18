@@ -1,0 +1,105 @@
+- name: Update all packages
+  package:
+    name: "*"
+    state: latest
+
+- name: Rebooting post update
+  reboot:
+    post_reboot_delay: 60
+    reboot_timeout: 500
+    connect_timeout: 300
+    test_command: uptime
+
+- name: Install base packages to make your life easier
+  package:
+    name: "{{item}}"
+    state: latest
+  loop: "{{base_packages}}"
+
+- name: Install epel-release
+  package:
+    name: epel-release
+    state: latest
+  ignore_errors: yes
+
+- name: Install ansible on Rocky
+  package:
+    name: ansible-core
+    state: latest
+
+#- name: Install python3-psycopg2
+#  package:
+#    name: python3-psycopg2
+#    state: latest
+#
+- name: Install psychopg2
+  shell: python3.9 -m pip install psycopg2-binary --user
+  become: yes
+  become_user: seeker
+
+- name: Install ansible_runner
+  shell: python3.9 -m pip install ansible-runner --user
+  become: yes
+  become_user: seeker
+  ignore_errors: yes
+
+- name: Disable postgresql module repo
+  shell: dnf -qy module disable postgresql
+
+- name: Install the postgres repo
+  package:
+    name: "{{postgres_repo}}"
+    state: present
+    disable_gpg_check: yes
+
+- name: Install postgresql server
+  package:
+    name: "{{postgres_server}}"
+    #name: postgresql14-server
+    state: latest
+    disable_gpg_check: yes
+
+- name: Install postgresql contrib packages
+  package:
+    name: "{{posgres_contrib}}"       
+    #name: postgresql14-contrib
+    state: latest
+
+- name: create required System accounts for isolated database access
+  user:
+    #name: "{{app_admin_account}}"
+    name: "{{item}}"
+    state: present
+  loop:
+   - "{{app_admin_account}}"
+   - "{{app_ro_account}}"
+
+- name: Set ACLs for db account
+  acl:
+    path: "{{seeker_path}}"
+    #entity: postgres
+    entity: "{{postgres_default}}"
+    permissions: rx
+    state: present
+    etype: user
+
+#BELOW SECTION COMMENTED OUT BECAUSE THEY COME BY DEFAULT IN RH AND ROCKY
+    #- name: Install ansible libvrt module
+    #  shell: ansible-galaxy collection install community.libvirt
+    #  become_user: "{{app_admin_account}}"
+    #  become: True
+    #  register: install_community_libvirt
+    #  until: "'install_community_libvirt.failed' == false"
+    #  retries: 10
+    #  delay: 2
+
+    #- name: Install Postgresql community ansible modules
+    #  shell: ansible-galaxy collection install community.postgresql
+    #  become_user: "{{app_admin_account}}"
+    #  become: True
+    #  register: install_community_postgresql
+    #  until: "'install_community_postgresql.failed'==false"
+    #  retries: 10
+    #  delay: 2
+
+

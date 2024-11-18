@@ -1,0 +1,13 @@
+- name: create user seeker
+  user:
+    name: "{{app_admin_account}}"
+    state: present
+
+- name: Set ACLs for db account
+  acl:
+    path: "{{seeker_path}}"
+    entity: postgres
+    permissions: rx
+    state: present
+    etype: user
+

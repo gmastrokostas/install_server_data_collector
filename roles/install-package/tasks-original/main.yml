@@ -1,0 +1,6 @@
+---
+#tasks file for server-info-collector
+- include_tasks: 1_assertion.yml
+- include_tasks: 2_install_packages.yml
+- include_tasks: 3_setup_database.yml
+- include_tasks: 4_install_app_files.yml 

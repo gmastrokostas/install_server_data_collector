@@ -1,0 +1,70 @@
+---
+#POSTGRES RELATED VARIABLES
+
+#Postgres RPM packages related
+postgres_repo: https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+postgres_server: postgresql14-server
+posgres_contrib: postgresql14-contrib
+
+#Ansible related packages
+epel: epel-release
+ansible-core: ansible-core
+libvirt: ansible-galaxy collection install community.libvirt
+
+#Base packages-utilities
+base_packages:
+- tar
+- wget
+- yum-utils
+- sysstat
+- net-tools
+- lsof
+- policycoreutils-python-utils
+- bash-completion
+- python39
+- python3-psycopg2
+- python3-pip
+
+#service names -- DO NOT change unless you know what you are doing
+#postgres_vnum: postgresql-14
+postgres_vnum: postgresql
+postgres_serv: postgresql
+postgres_default: postgres
+#postgres_pass: zxc123
+
+# vars related to config files
+#postgres_conf:  /var/lib/pgsql/14/data/postgresql.conf
+postgres_conf:  /var/lib/pgsql/data/postgresql.conf
+#postgres_pghba_conf: /var/lib/pgsql/14/data/pg_hba.conf
+postgres_pghba_conf: /var/lib/pgsql/data/pg_hba.conf
+
+#Vars related to DB admin account 
+#Vars related to seeker home directory
+#You can safely change the admin account name to your liking
+app_admin_account: seeker
+#app_adm_acnt_pass: zxc123
+seeker_path: /home/{{app_admin_account}}/
+
+#Vars related to read only DB account
+app_ro_account: ro_seeker
+#app_ro_acnt_pass: zxc123
+ro_seeker_path: /home/{{app_ro_account}}
+
+#Permissions for read only DB account
+grants:
+ - perm: create user ro_seeker;
+ - perm: grant  usage on SCHEMA serverdata_schema to ro_seeker;
+ - perm: grant select on all tables in schema serverdata_schema to ro_seeker;
+ - perm: alter default privileges  in schema serverdata_schema grant select on tables to ro_seeker;
+
+#Vars related to the database it 
+db_name: serverdata
+db_schema: schema_only.sql
+#db_schema: database-schema-IDNUM.sql
+
+#Shell commands
+init_db: /usr/pgsql-14/bin/postgresql-14-setup initdb
+
+#Install files
+app_tar_file: server_data_collector.tar
+app_dir: server_data_collector

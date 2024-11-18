@@ -1,0 +1,13 @@
+# TYPE  DATABASE        USER            	ADDRESS                 METHOD
+#Allow postgres to all database only through a local connection
+local   all     	{{postgres_default}} 	       			peer
+#Allow {{app_admin_account}} access only to serverdata database only through a local connection
+local   serverdata      {{app_admin_account}}          			peer
+local  serverdata      {{app_admin_account}}				trust
+#Allow {{app_ro_account}} access only to serverdata database only through a local connection
+local   serverdata      {{app_ro_account}}                           peer
+local  serverdata      {{app_ro_account}}                            trust
+#Trust used here for install purposes. Line will be deleted post install
+host    serverdata      {{app_admin_account}}  192.168.1.1/24  		trust
+
+
