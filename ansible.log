@@ -1,0 +1,33 @@
+2024-11-18 18:07:04,267 p=326888 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions,
+ use module_defaults instead. This feature will be removed from ansible-core in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-18 18:07:04,310 p=326888 u=seeker n=ansible | playbook: install_server_data_collector_role.yml
+2024-11-18 18:07:04,310 p=326888 u=seeker n=ansible |   play #1 (all): all	TAGS: []
+    pattern: ['all']
+    hosts (1):
+      hpv0
+2024-11-18 18:07:08,129 p=326891 u=seeker n=ansible | [DEPRECATION WARNING]: DEFAULT_GATHER_SUBSET option, the module_defaults keyword is a more generic version and can apply to all calls to the M(ansible.builtin.gather_facts) or M(ansible.builtin.setup) actions,
+ use module_defaults instead. This feature will be removed from ansible-core in version 2.18. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-11-18 18:07:18,358 p=326891 u=seeker n=ansible | PLAY [all] *******************************************************************************************************************************************************************************************************
+2024-11-18 18:07:18,381 p=326891 u=seeker n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2024-11-18 18:07:20,210 p=326891 u=seeker n=ansible | ok: [hpv0]
+2024-11-18 18:07:20,226 p=326891 u=seeker n=ansible | TASK [install-package : include_tasks] ***************************************************************************************************************************************************************************
+2024-11-18 18:07:20,239 p=326891 u=seeker n=ansible | included: /home/seeker/stash/git_projects/install_server_data_collector/roles/install-package/tasks/1_assertion.yml for hpv0
+2024-11-18 18:07:20,246 p=326891 u=seeker n=ansible | TASK [install-package : Assert server is  running Centos/Rocky version 8] ****************************************************************************************************************************************
+2024-11-18 18:07:20,259 p=326891 u=seeker n=ansible | ok: [hpv0] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-18 18:07:20,265 p=326891 u=seeker n=ansible | TASK [install-package : Assert server has more than one 1 GIG of RAM] ********************************************************************************************************************************************
+2024-11-18 18:07:20,277 p=326891 u=seeker n=ansible | ok: [hpv0] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-11-18 18:07:20,283 p=326891 u=seeker n=ansible | TASK [install-package : Set ansible variable for RedHat8] ********************************************************************************************************************************************************
+2024-11-18 18:07:20,295 p=326891 u=seeker n=ansible | ok: [hpv0]
+2024-11-18 18:07:20,301 p=326891 u=seeker n=ansible | TASK [install-package : Set ansible variable for Rocky8] *********************************************************************************************************************************************************
+2024-11-18 18:07:20,309 p=326891 u=seeker n=ansible | skipping: [hpv0]
+2024-11-18 18:07:20,315 p=326891 u=seeker n=ansible | TASK [install-package : include_tasks] ***************************************************************************************************************************************************************************
+2024-11-18 18:07:20,334 p=326891 u=seeker n=ansible | included: /home/seeker/stash/git_projects/install_server_data_collector/roles/install-package/tasks/2_install_packages.yml for hpv0
+2024-11-18 18:07:20,341 p=326891 u=seeker n=ansible | TASK [install-package : Update all packages] *********************************************************************************************************************************************************************
+2024-11-18 18:07:21,609 p=326891 u=seeker n=ansible | ok: [hpv0]
+2024-11-18 18:07:21,615 p=326891 u=seeker n=ansible | TASK [install-package : Rebooting post update] *******************************************************************************************************************************************************************
