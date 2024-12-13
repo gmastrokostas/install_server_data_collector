@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.10
--- Dumped by pg_dump version 14.10
+-- Dumped from database version 13.16
+-- Dumped by pg_dump version 13.16
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -132,8 +132,8 @@ CREATE TABLE serverdata_schema.network_interfaces (
     serverid integer,
     hostname character varying(50),
     ifname character varying(50),
-    ipaddr character varying(30),
-    netmask character varying(30)
+    ipaddr character varying(100),
+    netmask character varying(100)
 );
 
 
@@ -330,9 +330,9 @@ ALTER TABLE serverdata_schema.sar_page_perf OWNER TO seeker;
 CREATE TABLE serverdata_schema.storage_capacity (
     serverid integer,
     hostname character varying(50),
-    mount character varying(150),
+    mount character varying(200),
     fstype character varying(10),
-    device character varying(50),
+    device character varying(200),
     size_available bigint,
     size_total bigint,
     size_available_human character varying(20),
